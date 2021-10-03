@@ -14,70 +14,143 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>esWeb Arama</title>
         <script>
-            function Search()
+
+            function search()
             {
-                if(document.getElementById("qBox").value != "")
+                if(document.getElementById("stxt").value != "")
                 {
-                    var searchQ = document.getElementById("qBox").value;
-                    location.href = "https://www.google.com/search?q=" + searchQ;
+                    document.location.href = "https://www.google.com/search?q=" + document.getElementById("stxt").value
                 }
             }
-            function onLoadScr()
-            {
-                document.getElementById("qBox").value = "";
+
+            function onload(){
+                document.getElementById("stxt").value = "";
             }
         </script>
-        <script src="main.js"></script>
         <style>
-            .body{
-                background-image: url('img/search-bg.jpg');
+            html{
+                margin: 0;
+                border: 0;
+                padding: 0;
+                height: 100%;
+                width: 100%;
+            }
+            body{
+                margin: 0;
+                border: 0;
+                padding: 0;
+                height: 100%;
+                width: 100%;
+
+                background: linear-gradient( rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15) ), url('img/search-bg.jpg');
+                /* background-image: url('img/search-bg.jpg'); */
+                background-size: cover;
                 background-repeat: no-repeat;
-                text-align: center;
+                background-position: center;
+
+                overflow: hidden;
             }
             .title{
                 font-size: 40px;
                 font-family: Calibri;
-            }
-            .sForm{
-                background-color: white;
-                display: inline-block;
-                border-radius: 7px;
-                vertical-align: middle;
-                border: 2px rgb(148, 148, 148) outset;
-            }
-            .sDiv{
                 text-align: center;
-                vertical-align: top;
+                color: rgb(0, 0, 0);
+                user-select: none;
+                -webkit-user-select: none;
+                -ms-user-select: none;
+
+                position: absolute;
+                left: 50%;
+                top: 20%;
+                transform: translate(-50%, -50%);
             }
-            .qBox{
+            .subtitle{
+                font-size: 20px;
+                font-family: Calibri;
+                text-align: center;
+                color: rgb(0, 0, 0);
+                user-select: none;
+                -webkit-user-select: none;
+                -ms-user-select: none;
+
+                position: absolute;
+                left: 50%;
+                top: 30%;
+                transform: translate(-50%, -50%);
+            }
+            .sfrm{
+                background-color: rgb(255, 255, 255);
+                display: inline-block;
+                text-align: center;
+                border-radius: 31px;
+                padding: 10px;
+
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                border: 0.5px solid rgb(114, 114, 114);
+            }
+            #stxt{
                 width: 300px;
                 height: 30px;
                 font-size: 20px;
                 float: left;
                 border: transparent;
+
+                user-select: none;
+                -webkit-user-select: none;
+                -ms-user-select: none;
+
+                background-color: transparent;
             }
-            .submitBtn{
+            #stxt:focus{
+                outline: none;
+            }
+            #sbtn{
                 width: 30px;
                 height: 30px;
                 font-size: 20px;
                 background-image: url('img/search-icon.png');
                 background-position: center;
-                background-size: cover;
+                background-size: 28px;
+                background-repeat: no-repeat;
                 float: right;
                 border: transparent;
+                background-color: transparent;
             }
+            #rt_btn{
+                width: 132px;
+                height: 36px;
+                border: 1px solid rgb(95, 18, 196);
+                padding-left: 15px;
+                padding-right: 15px;
+                padding-bottom: 7px;
+                padding-top: 7px;
 
+                border-radius: 5px;
+                background-color: rgb(116, 55, 196);
+
+                font-family: Calibri;
+                color: white;
+                font-size: 15px;
+
+                position: absolute;
+                left: 5px;
+                bottom: 5px;
+            }
+            #rt_btn:hover{
+                background-color: rgb(77, 38, 129);
+            }
         </style>
     </head>
-    <body class="body" onload="onLoadScr()">
-        <h1 class="title">esWeb</h1>
-        <br>
-        <h3>based on Google</h3>
-        <br>
-        <form class="sForm" onsubmit="Search();return false">
-            <input type="text" class="qBox" id="qBox" title="Write me anything..." placeholder="Start typing..."/>
-            <input type="submit" title="Search now!" class="submitBtn" value=""/>
+    <body onload="onload()"> 
+        <h1 class="title">esWeb Search</h1>
+        <h3 class="subtitle">based on Google</h3>
+        <form class="sfrm" onsubmit="search(); return false;">
+            <input type="text" id="stxt" placeholder="Search..." value="">
+            <input type="submit" id="sbtn" value="">
         </form>
-        <button title="Turn back to Main Page." style="background-color: grey; height: 30px; border-radius: 3px; position: absolute; left: 0; top: 0;" onclick="location.href = '/'">&lt;== Turn back to Main Page</button>
+        <input type="button" onclick="location.href='/'" id="rt_btn" value="Return to home">
     </body>
 </html>
