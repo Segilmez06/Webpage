@@ -1,0 +1,143 @@
+html, body {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: #494949;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+
+}
+  
+body::-webkit-scrollbar-track {
+    display: none;
+
+}
+  
+body::-webkit-scrollbar-thumb {
+    display: none;
+
+}
+
+.head {
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    /* z-index: -1; */
+    background-image: url("/img/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.title {
+    color: #ffffff;
+    position: absolute;
+    left: 50%;
+    top: 25%;
+    transform: translate(-50%, -50%);
+    font-size: 10vw;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    width: 100%;
+
+    display: none;
+}
+
+.filter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    display: none;
+}
+
+.horizontal_line {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75vw;
+    height: 1px;
+    background-color: #ffffff;
+
+    display: none;
+}
+
+.scroll_section {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;
+
+    display: none;
+}
+
+.down {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    border: solid rgb(255, 255, 255);
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.scrollDown {
+    background-color: transparent;
+    border: transparent;
+}
+
+.links_container {
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+}
+
+.links {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.link {
+    vertical-align: middle;
+}
+
+.link_img {
+    height: 10vw;
+    width: 10vw;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #ffffff;
+    border-radius: 15px;
+    background-color: transparent;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.link_img:hover {
+    position: relative;
+    background-color: #6b6b6b;
+    border-color: #949494;
+
+    margin-left: 0px;
+    margin-right: 0px;
+
+    height: calc(10vw + 20px);
+    width: calc(10vw + 20px);
+}
