@@ -124,18 +124,14 @@ body::-webkit-scrollbar-thumb {
     border-color: #ffffff;
     border-radius: 15px;
     background-color: transparent;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: 10px;
 }
 
 .link_img:hover {
     position: relative;
     background-color: #6b6b6b;
     border-color: #949494;
-
-    margin-left: 0px;
-    margin-right: 0px;
-
+    margin: 0px;
     height: calc(10vw + 20px);
     width: calc(10vw + 20px);
 }
