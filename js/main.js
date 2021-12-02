@@ -12,13 +12,11 @@ async function onLoad() {
 window.addEventListener('wheel', function(e){
     if(!scrollAnimRunning) {
         if (e.deltaY >= 0) { //DOWN
-            console.log("Down");
             scrollAnimRunning = true;
             $('html, body').animate({ scrollTop: $(".links_container").offset().top }, 2000);
             $('html, body').promise().done(function(){ scrollAnimRunning = false;});
         }
         else { //UP
-            console.log("Up");
             scrollAnimRunning = true;
             $('html, body').animate({ scrollTop: $(".head").offset().top }, 2000);
             $('html, body').promise().done(function(){ scrollAnimRunning = false;});
