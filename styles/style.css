@@ -1,3 +1,10 @@
+* {
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    touch-action: none;
+}
+
 html, body {
     margin: 0;
     border: 0;
@@ -30,7 +37,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-image: url("/img/background.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -56,9 +63,8 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
-
     display: none;
 }
 
@@ -74,9 +80,21 @@ body {
     display: none;
 }
 
-.scroll_section {
-    position: absolute;
+.scrolldown_section {
+    position: relative;
     top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;
+
+    display: none;
+}
+
+.scrollup_section {
+    position: relative;
+    top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -89,6 +107,15 @@ body {
 .down {
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
+    border: solid rgb(255, 255, 255);
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.up {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(-135deg);
     border: solid rgb(255, 255, 255);
     border-width: 0 3px 3px 0;
     display: inline-block;
