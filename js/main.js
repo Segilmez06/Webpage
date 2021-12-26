@@ -2,11 +2,21 @@ var scrollAnimRunning = false;
 
 window.addEventListener("wheel", e => e.preventDefault(), { passive:false });
 
+window.oncontextmenu = disabled;
+window.onkeypress = disabled;
+
+window.onload = onLoad;
+
+function disabled(){return false;} // Disabling action by returning false
+
 function delay(time) {
     return new Promise(resolve => setTimeout(resolve, time));
 }
 
 async function onLoad() {
+    document.getElementById("scrollDown").addEventListener("click", scrollDown);
+    document.getElementById("scrollUp").addEventListener("click", scrollUp);
+
     await delay(500);
     $(".fade").fadeIn(1000);
 
