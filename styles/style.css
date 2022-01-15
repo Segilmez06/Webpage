@@ -45,6 +45,7 @@ body {
 }
 
 .title {
+    z-index: 4;
     color: #ffffff;
     position: absolute;
     left: 50%;
