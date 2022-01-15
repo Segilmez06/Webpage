@@ -14,6 +14,10 @@ function delay(time) {
 }
 
 async function onLoad() {
+    var i = ["Hey, what are you doing here?", "WOW! You're a programmer. I like it.", "Wanna be a hacker? Just type in this: document.designmode = 'on';"]
+    var r = Math.floor(Math.random()*3)
+    console.log(i[r])
+    
     document.getElementById("scrollDown").addEventListener("click", scrollDown);
     document.getElementById("scrollUp").addEventListener("click", scrollUp);
 
