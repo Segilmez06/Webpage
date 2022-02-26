@@ -15,7 +15,7 @@ html, body {
 }
 
 body {
-    background-color: #494949;
+    background-color: #383838;
 }
 
 ::-webkit-scrollbar {
@@ -162,4 +162,8 @@ body {
     margin: 0px;
     height: calc(10vw + 20px);
     width: calc(10vw + 20px);
+}
+.stats {
+    position: relative;
+    top: 30%
 }
