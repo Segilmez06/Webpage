@@ -21,6 +21,8 @@ async function onLoad() {
     document.getElementById("scrollDown").addEventListener("click", scrollDown);
     document.getElementById("scrollUp").addEventListener("click", scrollUp);
 
+    setInterval(dockScroll, 150);
+
     await delay(500);
     $(".fade").fadeIn(1000);
 
@@ -53,4 +55,24 @@ function scrollUp() {
 
 window.onbeforeunload = function () {
     $('html, body').animate({ scrollTop: 0 }, 1);
+}
+
+async function dockScroll(){
+    var winHeight = screen.height;
+    var halfHeight = winHeight / 2;
+    var scroll1 = Math.round(window.scrollY);
+    await delay(150);
+    var scroll2 = Math.round(window.scrollY);  
+    if (scroll1 == scroll2 && scroll1 != 0  && scroll1 != winHeight && scrollAnimRunning == false) {
+        scrollAnimRunning = true;
+        var drawerOpen = scroll1 > halfHeight;
+        if (drawerOpen) {
+            $("html, body").animate({ scrollTop: winHeight }, 1000);
+            $('html, body').promise().done(function(){ scrollAnimRunning = false;});
+        }
+        else {
+            $("html, body").animate({ scrollTop: 0 }, 1000);   
+            $('html, body').promise().done(function(){ scrollAnimRunning = false;});
+        }
+    }    
 }
