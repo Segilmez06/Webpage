@@ -135,9 +135,21 @@ body {
 
 .links {
     position: relative;
-    top: 50%;
+    top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.info-header {
+    color: #ffffff;
+    /* position: relative;
+    left: 50%;
+    top: 25%;
+    transform: translate(-50%, -50%); */
+    font-size: 3vw;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    /* width: 100%; */
 }
 
 .link {
@@ -163,7 +175,8 @@ body {
     height: calc(10vw + 20px);
     width: calc(10vw + 20px);
 }
-.stats {
+
+/* .stats {
     position: relative;
     top: 30%
-}
+} */
