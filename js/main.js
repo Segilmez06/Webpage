@@ -21,7 +21,7 @@ async function onLoad() {
     document.getElementById("scrollDown").addEventListener("click", scrollDown);
     document.getElementById("scrollUp").addEventListener("click", scrollUp);
 
-    setInterval(dockScroll, 150);
+    setInterval(dockScroll, 50);
 
     await delay(500);
     $(".fade").fadeIn(1000);
@@ -43,21 +43,41 @@ function scrollHandler(e) {
 
 function scrollDown(){
     scrollAnimRunning = true;
+    document.querySelector('*').style.touchAction = 'none';
     $('html, body').animate({ scrollTop: $(".links_container").offset().top }, 2000);
-    $('html, body').promise().done(function(){ scrollAnimRunning = false;});
+    $('html, body').promise().done(function(){ document.querySelector('*').style.touchAction = '';scrollAnimRunning = false;});
 }
 
 function scrollUp() { 
     scrollAnimRunning = true;
+    document.querySelector('*').style.touchAction = 'none';
     $('html, body').animate({ scrollTop: $(".head").offset().top }, 2000);
-    $('html, body').promise().done(function(){ scrollAnimRunning = false;});
+    $('html, body').promise().done(function(){ document.querySelector('*').style.touchAction = ''; scrollAnimRunning = false;});
 }
 
 window.onbeforeunload = function () {
     $('html, body').animate({ scrollTop: 0 }, 1);
 }
 
+// Detects scrolling direction -- Use this, much better
 async function dockScroll(){
+    var winHeight = screen.height;
+    var halfHeight = winHeight / 2;
+    var scroll1 = Math.round(window.scrollY);
+    await delay(50);
+    var scroll2 = Math.round(window.scrollY);
+    if (scrollAnimRunning == false){
+        if (scroll1 < scroll2) {
+            scrollDown();
+        }
+        else if (scroll1 > scroll2) {
+            scrollUp();
+        }
+    }
+}
+
+// Automatically scrolls to most visible div
+async function autoScroll(){
     var winHeight = screen.height;
     var halfHeight = winHeight / 2;
     var scroll1 = Math.round(window.scrollY);
