@@ -7,6 +7,14 @@ window.onkeypress = disabled;
 
 window.onload = onLoad;
 
+document.addEventListener('visibilitychange', function (event) {
+    if (document.hidden) {
+        document.title = "Hey! You left me open.";
+    } else {
+        document.title = "Sarp Eren EGILMEZ";
+    }
+});
+
 function disabled(){return false;} // Disabling action by returning false
 
 function delay(time) {
