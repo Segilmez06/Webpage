@@ -22,6 +22,14 @@ function delay(time) {
 }
 
 async function onLoad() {
+    var msg = `
+     _   _      _ _         _
+    | | | | ___| | | ___   | |
+    | |_| |/ _ \\ | |/ _ \\  | |
+    |  _  |  __/ | | (_) | |_|
+    |_| |_|\\___|_|_|\\___/  (_)
+    `;
+    console.log(msg);
     var i = ["Hey, what are you doing here?", "WOW! You're a programmer. I like it.", "Wanna be a hacker? Just type in this: document.designmode = 'on';", "I believe that HTML will be a programming language one day.", "Can't find any projects? Try to simulate your desktop with HTML, CSS and JS.", "Minecraft is a strange game. Circle-free with circles.", "I see a player you mean.", "Figlet is cool!"];
     var r = Math.floor(Math.random()*i.length);
     console.log(i[r]);
