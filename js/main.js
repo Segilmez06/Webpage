@@ -30,10 +30,10 @@ async function onLoad() {
     |_| |_|\\___|_|_|\\___/  (_)
     `;
     console.log(msg);
-    var i = ["Hey, what are you doing here?", "WOW! You're a programmer. I like it.", "Wanna be a hacker? Just type in this: document.designmode = 'on';", "I believe that HTML will be a programming language one day.", "Can't find any projects? Try to simulate your desktop with HTML, CSS and JS.", "Minecraft is a strange game. Circle-free with circles.", "I see a player you mean.", "Figlet is cool!"];
+    var i = ["Hey, what are you doing here?", "WOW! You're a programmer. I like it.", "Wanna be a hacker? Just type in this: document.designmode = 'on';", "I believe that HTML will be a programming language one day.", "Can't find any projects? Try to simulate your desktop with HTML, CSS and JS.", "Minecraft is a strange game. Circle-free with circles.", "I see a player you mean.", "Figlet is cool!", "Feelin' like a HECKER? Type 'heckerMode()'!"];
     var r = Math.floor(Math.random()*i.length);
     console.log(i[r]);
-    
+
     document.getElementById("scrollDown").addEventListener("click", scrollDown);
     document.getElementById("scrollUp").addEventListener("click", scrollUp);
 
@@ -46,11 +46,13 @@ async function onLoad() {
     window.addEventListener('wheel', scrollHandler);
 }
 
-function sendCat() {
-    console.log("Feelin' like a *HECKER* ? Hehe, ^HackCat^ is here for you bro!");
+function heckerMode() {
+    console.log("Hehe, ^HackCat^ is here for you.");
     var styleArray= [
-        'background-image: url("/img/console/hackercat.gif")',
+        'background-image: url("https://media3.giphy.com/media/unQ3IJU2RG7DO/giphy.gif")',
         'background-size: cover',
+        'background-repeat: no-repeat',
+        'background-position: center',
         'color: #fff',
         'padding: 50px',
         'line-height: 150px',
@@ -59,7 +61,7 @@ function sendCat() {
         'height : 70px',
         'border : 5px solid transparent'
     ];
-    console.log('%cHackerCat', styleArray.join(';'));
+    console.log('%c                           ', styleArray.join(';')); // Few blanks for the cat gif.
 }
 
 function scrollHandler(e) {
