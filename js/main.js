@@ -1,5 +1,6 @@
 var scrollAnimRunning = false;
 
+// Handlers
 window.addEventListener("wheel", e => e.preventDefault(), { passive:false });
 
 window.oncontextmenu = disabled;
@@ -7,6 +8,7 @@ window.onkeypress = disabled;
 
 window.onload = onLoad;
 
+// Rename tab on hide
 document.addEventListener('visibilitychange', function (event) {
     if (document.hidden) {
         document.title = "Hey! You left me open.";
@@ -15,12 +17,15 @@ document.addEventListener('visibilitychange', function (event) {
     }
 });
 
-function disabled(){return false;} // Disabling action by returning false
+// Disabling action by returning false
+function disabled(){return false;}
 
+// Sometimes, a break is not that bad...
 function delay(time) {
     return new Promise(resolve => setTimeout(resolve, time));
 }
 
+// Onload handler, basically
 async function onLoad() {
     var msg = `
      _   _      _ _         _
@@ -46,6 +51,7 @@ async function onLoad() {
     window.addEventListener('wheel', scrollHandler);
 }
 
+// Runny funny feature
 function heckerMode() {
     console.log("Hehe, ^HackCat^ is here for you.");
     var styleArray= [
@@ -64,6 +70,7 @@ function heckerMode() {
     console.log('%c                           ', styleArray.join(';')); // Few blanks for the cat gif.
 }
 
+// Mouse wheel scroll handler
 function scrollHandler(e) {
     if(!scrollAnimRunning) {
         if (e.deltaY >= 0) { //DOWN
@@ -89,6 +96,7 @@ function scrollUp() {
     $('html, body').promise().done(function(){ document.querySelector('*').style.touchAction = ''; scrollAnimRunning = false;});
 }
 
+//Scroll to top before reload: If user comes back to page, it'll restart from top.
 window.onbeforeunload = function () {
     $('html, body').animate({ scrollTop: 0 }, 1);
 }
@@ -96,7 +104,6 @@ window.onbeforeunload = function () {
 // Detects scrolling direction -- Use this, much better
 async function dockScroll(){
     var winHeight = screen.height;
-    var halfHeight = winHeight / 2;
     var scroll1 = Math.round(window.scrollY);
     await delay(50);
     var scroll2 = Math.round(window.scrollY);
@@ -110,7 +117,7 @@ async function dockScroll(){
     }
 }
 
-// Automatically scrolls to most visible div
+// Automatically scrolls to more visible div
 async function autoScroll(){
     var winHeight = screen.height;
     var halfHeight = winHeight / 2;
