@@ -46,6 +46,22 @@ async function onLoad() {
     window.addEventListener('wheel', scrollHandler);
 }
 
+function sendCat() {
+    console.log("Feelin' like a *HECKER* ? Hehe, ^HackCat^ is here for you bro!");
+    var styleArray= [
+        'background-image: url("/img/console/hackercat.gif")',
+        'background-size: cover',
+        'color: #fff',
+        'padding: 50px',
+        'line-height: 150px',
+        'line-width: 150px',
+        'width : 150px',
+        'height : 70px',
+        'border : 5px solid transparent'
+    ];
+    console.log('%cHackerCat', styleArray.join(';'));
+}
+
 function scrollHandler(e) {
     if(!scrollAnimRunning) {
         if (e.deltaY >= 0) { //DOWN
