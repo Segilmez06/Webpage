@@ -35,7 +35,7 @@ async function onLoad() {
     |_| |_|\\___|_|_|\\___/  (_)
     `;
     console.log(msg);
-    var i = ["Hey, what are you doing here?", "WOW! You're a programmer. I like it.", "Wanna be a hacker? Just type in this: document.designmode = 'on';", "I believe that HTML will be a programming language one day.", "Can't find any projects? Try to simulate your desktop with HTML, CSS and JS.", "Minecraft is a strange game. Circle-free with circles.", "I see a player you mean.", "Figlet is cool!", "Feelin' like a HECKER? Type 'heckerMode()'!"];
+    var i = ["Hey, what are you doing here?", "WOW! You're a programmer. I like it.", "Wanna be a hacker? Just type in this: document.designmode = 'on';", "I believe that HTML will be a programming language one day.", "Can't find any projects? Try to simulate your desktop with HTML, CSS and JS.", "Minecraft is a strange game. Circle-free with circles.", "I see a player you mean.", "Figlet is cool!", "Feelin' like a *HECKER* ? Just run heckerMode()"];
     var r = Math.floor(Math.random()*i.length);
     console.log(i[r]);
 
@@ -53,21 +53,16 @@ async function onLoad() {
 
 // Runny funny feature
 function heckerMode() {
-    console.log("Hehe, ^HackCat^ is here for you.");
+    console.log("😼 HackCat is here for you.");
     var styleArray= [
         'background-image: url("https://media3.giphy.com/media/unQ3IJU2RG7DO/giphy.gif")',
         'background-size: cover',
         'background-repeat: no-repeat',
         'background-position: center',
-        'color: #fff',
-        'padding: 50px',
-        'line-height: 150px',
-        'line-width: 150px',
-        'width : 150px',
-        'height : 70px',
-        'border : 5px solid transparent'
+        'color: transparent',
+        'padding: 150px',
     ];
-    console.log('%c                           ', styleArray.join(';')); // Few blanks for the cat gif.
+    console.log('%c ', styleArray.join(';'));
 }
 
 // Mouse wheel scroll handler
