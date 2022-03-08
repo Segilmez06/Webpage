@@ -151,8 +151,8 @@ body {
 }
 
 .link_img {
-    height: 10vw;
-    width: 10vw;
+    height: 15vh;
+    width: 15vh;
     border-style: solid;
     border-width: 1px;
     border-color: #ffffff;
@@ -166,6 +166,6 @@ body {
     background-color: #6b6b6b;
     border-color: #949494;
     margin: 0px;
-    height: calc(10vw + 20px);
-    width: calc(10vw + 20px);
+    height: calc(15vh + 20px);
+    width: calc(15vh + 20px);
 }
