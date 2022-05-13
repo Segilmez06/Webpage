@@ -27,8 +27,4 @@ async function onLoad() {
     var i = ["I lost my glasses.", "Where to find this page?", "Ghost isn't scary but 404 is!", "Say hi dude, that's server's attitude."];
     var r = Math.floor(Math.random()*i.length);
     console.log(i[r]);
-
-    var emojiList = "😒🤔🤨😑😶🙄😣😥😮😯😫😒😕😔😓😲☹️🙁😖😞😧😦😭😢😟😨😩🤯😬😮‍💨😰😠😵‍💫🥴🥺";
-    var randomEmoji = Math.floor(Math.random() * emojiList.length);
-    $('#emoji-header').innerHTML = "OOPS! " + emojiList[randomEmoji];
 }
