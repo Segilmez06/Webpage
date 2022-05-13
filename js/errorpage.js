@@ -18,17 +18,17 @@ function delay(time) {
 async function onLoad() {
     var msg = `
      ___   ___  ____  ____  _
-    / _ \ / _ \|  _ \/ ___|| |
-   | | | | | | | |_) \___ \| |
+    / _ \\ / _ \\|  _ \\/ ___|| |
+   | | | | | | | |_) \\___ \\| |
    | |_| | |_| |  __/ ___) |_|
-    \___/ \___/|_|   |____/(_)
+    \\___/ \\___/|_|   |____/(_)
     `;
     console.log(msg);
     var i = ["I lost my glasses.", "Where to find this page?", "Ghost isn't scary but 404 is!", "Say hi dude, that's server's attitude."];
     var r = Math.floor(Math.random()*i.length);
     console.log(i[r]);
 
-    var emojiList = "";
+    var emojiList = "😒🤔🤨😑😶🙄😣😥😮😯😫😒😕😔😓😲☹️🙁😖😞😧😦😭😢😟😨😩🤯😬😮‍💨😰😠😵‍💫🥴🥺";
     var randomEmoji = Math.floor(Math.random() * emojiList.length);
-    $('emoji-header').innerHTML = "OOPS! " + emojiList[randomEmoji];
+    $('#emoji-header').innerHTML = "OOPS! " + emojiList[randomEmoji];
 }
