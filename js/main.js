@@ -1,19 +1,28 @@
-var scrollAnimRunning = false;
+const msg = `
+ _   _      _ _         _
+| | | | ___| | | ___   | |
+| |_| |/ _ \\ | |/ _ \\  | |
+|  _  |  __/ | | (_) | |_|
+|_| |_|\\___|_|_|\\___/  (_)
+`;
+
+let scrollAnimRunning = false;
 
 // Handlers
 window.addEventListener("wheel", e => e.preventDefault(), { passive:false });
 
-window.oncontextmenu = disabled;
-window.onkeypress = disabled;
+window.addEventListener("contextmenu", disabled);
+window.addEventListener("keypress", disabled);
+window.addEventListener("keydown", disabled);
 
 window.onload = onLoad;
 
 // Rename tab on hide
 document.addEventListener('visibilitychange', function (event) {
     if (document.hidden) {
-        document.title = "Hey! You left me open.";
+        document.title = "Hey! You left me open. :: Sarp Eren EGILMEZ";
     } else {
-        document.title = "Sarp Eren EGILMEZ";
+        document.title = "Personal Webpage :: Sarp Eren EGILMEZ";
     }
 });
 
@@ -25,30 +34,49 @@ function delay(time) {
     return new Promise(resolve => setTimeout(resolve, time));
 }
 
+// Auto scroll on load
+window.addEventListener('load', function() {
+    let currentURL = new URL(location.href);
+    const viewLinks = (currentURL.searchParams.get('view') == 'links');
+    if (viewLinks){
+        window.scrollTo(0, window.innerHeight);
+    }
+    else {
+        window.scrollTo(0, 0);
+    }
+});
+
 // Onload handler, basically
 async function onLoad() {
-    var msg = `
-     _   _      _ _         _
-    | | | | ___| | | ___   | |
-    | |_| |/ _ \\ | |/ _ \\  | |
-    |  _  |  __/ | | (_) | |_|
-    |_| |_|\\___|_|_|\\___/  (_)
-    `;
     console.log(msg);
-    var i = ["Hey, what are you doing here?", "WOW! You're a programmer. I like it.", "Wanna be a hacker? Just type in this: document.designmode = 'on';", "I believe that HTML will be a programming language one day.", "Can't find any projects? Try to simulate your desktop with HTML, CSS and JS.", "Minecraft is a strange game. Circle-free with circles.", "I see a player you mean.", "Figlet is cool!", "Feelin' like a *HECKER* ? Just run heckerMode()"];
-    var r = Math.floor(Math.random()*i.length);
+    let i = [
+        "Hey, what are you doing here?", 
+        "WOW! You're a programmer. I like it.", 
+        "Wanna be a hacker? Just type in this: document.designmode = 'on';", 
+        "I believe that HTML will be a programming language one day.", 
+        "Can't find any projects? Try to simulate your desktop with HTML, CSS and JS.", 
+        "Minecraft is a strange game. Circle-free with circles.", 
+        "I see a player you mean.", 
+        "Figlet is cool!", 
+        "Feelin' like a *HECKER* ? Just run heckerMode()"
+    ];
+    let r = Math.floor(Math.random()*i.length);
     console.log(i[r]);
 
     document.getElementById("scrollDown").addEventListener("click", scrollDown);
     document.getElementById("scrollUp").addEventListener("click", scrollUp);
 
-    setInterval(dockScroll, 50);
+    initDynaWP();
 
     await delay(500);
     $(".fade").fadeIn(1000);
 
-    await delay(1000);
+    // await delay(1000);
     window.addEventListener('wheel', scrollHandler);
+    setInterval(dockScroll, 50);
+
+    await delay(7500);
+    $(".scrollInfo").fadeIn(1000);
 }
 
 // Runny funny feature
