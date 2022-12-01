@@ -6,6 +6,7 @@ const msg = `
 |_| |_|\\___|_|_|\\___/  (_)
 `;
 
+// Scroll variables
 let scrollPerformed = false;
 let scrollAnimRunning = false;
 
@@ -18,8 +19,8 @@ window.addEventListener('keydown', disabled);
 document.addEventListener('visibilitychange', visibilityChanged);
 document.addEventListener('DOMContentLoaded', startupScroll);
 
-// Rename tab on hide
-function visibilityChanged(){
+
+function visibilityChanged(){// Rename tab on hide
     if (document.hidden) {
         document.title = "Hey! You left me open. :: Sarp Eren EGILMEZ";
     } else {
@@ -27,8 +28,7 @@ function visibilityChanged(){
     }
 }
 
-// Auto scroll on load
-function startupScroll() {
+function startupScroll() {// Auto scroll on load
     if (new URL(location.href).searchParams.get('view') == 'links'){
         window.scrollTo(0, window.innerHeight);
     }
@@ -37,8 +37,7 @@ function startupScroll() {
     }
 };
 
-// Onload handler, basically
-async function onLoad() {
+async function onLoad() {// Onload handler, basically
     console.log(msg);
     let i = [
         "Hey, what are you doing here?", 
@@ -70,34 +69,22 @@ async function onLoad() {
     }
 }
 
-// Runny funny feature
-function heckerMode() {
-    console.log("😼 HackCat is here for you.");
-    var styleArray= [
-        'background-image: url("https://media3.giphy.com/media/unQ3IJU2RG7DO/giphy.gif")',
-        'background-size: cover',
-        'background-repeat: no-repeat',
-        'background-position: center',
-        'color: transparent',
-        'padding: 150px',
-    ];
-    console.log('%c ', styleArray.join(';'));
+function heckerMode() {// Some dumb feature
+    console.log("😼 HeckerCat is here for you.");
 }
 
-// Mouse wheel scroll handler
-function scrollHandler(e) {
+function scrollHandler(e) {// Mouse wheel scroll handler
     if(!scrollAnimRunning) {
-        if (e.deltaY >= 0) { //DOWN
+        if (e.deltaY >= 0) {
             scrollDown();
         }
-        else { //UP
+        else {
             scrollUp();
         }
     }
 }
 
-// Animate scrolling down
-function scrollDown(){
+function scrollDown(){// Animate scrolling down
     scrollAnimRunning = true;
     document.querySelector('*').style.touchAction = 'none';
     $('html, body').animate({ scrollTop: $(".links_container").offset().top }, 2000);
@@ -105,8 +92,7 @@ function scrollDown(){
     scrollPerformed = true;
 }
 
-// Animate scrolling up
-function scrollUp() { 
+function scrollUp() {// Animate scrolling up
     scrollAnimRunning = true;
     document.querySelector('*').style.touchAction = 'none';
     $('html, body').animate({ scrollTop: $(".head").offset().top }, 2000);
@@ -114,12 +100,11 @@ function scrollUp() {
     scrollPerformed = true;
 }
 
-// Detects scrolling direction -- Use this, much better
-async function dockScroll(){
-    var winHeight = screen.height;
-    var scroll1 = Math.round(window.scrollY);
+async function dockScroll(){// Detects scrolling direction -- Use this, much better
+    let winHeight = screen.height;
+    let scroll1 = Math.round(window.scrollY);
     await delay(50);
-    var scroll2 = Math.round(window.scrollY);
+    let scroll2 = Math.round(window.scrollY);
     if (scrollAnimRunning == false){
         if (scroll1 < scroll2) {
             scrollDown();
