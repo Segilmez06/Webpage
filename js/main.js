@@ -6,19 +6,17 @@ const msg = `
 |_| |_|\\___|_|_|\\___/  (_)
 `;
 
-const currentURL = new URL(location.href);
-const viewLinks = (currentURL.searchParams.get('view') == 'links');
-
+let scrollPerformed = false;
 let scrollAnimRunning = false;
 
 // Handlers
 window.addEventListener('load', onLoad);
-window.addEventListener('load', startupScroll);
 window.addEventListener('wheel', e => e.preventDefault(), { passive:false });
 window.addEventListener('contextmenu', disabled);
 window.addEventListener('keypress', disabled);
 window.addEventListener('keydown', disabled);
 document.addEventListener('visibilitychange', visibilityChanged);
+document.addEventListener('DOMContentLoaded', startupScroll);
 
 // Rename tab on hide
 function visibilityChanged(){
@@ -31,7 +29,7 @@ function visibilityChanged(){
 
 // Auto scroll on load
 function startupScroll() {
-    if (viewLinks){
+    if (new URL(location.href).searchParams.get('view') == 'links'){
         window.scrollTo(0, window.innerHeight);
     }
     else {
@@ -67,7 +65,9 @@ async function onLoad() {
     setInterval(dockScroll, 50);
 
     await delay(7500);
-    $(".scrollInfo").fadeIn(1000);
+    if (scrollPerformed == false) {
+        $(".scrollInfo").fadeIn(1000);
+    }
 }
 
 // Runny funny feature
@@ -102,6 +102,7 @@ function scrollDown(){
     document.querySelector('*').style.touchAction = 'none';
     $('html, body').animate({ scrollTop: $(".links_container").offset().top }, 2000);
     $('html, body').promise().done(function(){ document.querySelector('*').style.touchAction = '';scrollAnimRunning = false;});
+    scrollPerformed = true;
 }
 
 // Animate scrolling up
@@ -110,6 +111,7 @@ function scrollUp() {
     document.querySelector('*').style.touchAction = 'none';
     $('html, body').animate({ scrollTop: $(".head").offset().top }, 2000);
     $('html, body').promise().done(function(){ document.querySelector('*').style.touchAction = ''; scrollAnimRunning = false;});
+    scrollPerformed = true;
 }
 
 // Detects scrolling direction -- Use this, much better
@@ -127,24 +129,3 @@ async function dockScroll(){
         }
     }
 }
-
-// // Automatically scrolls to more visible div -- Will be deleted in the future
-// // async function autoScroll(){
-// //     var winHeight = screen.height;
-// //     var halfHeight = winHeight / 2;
-// //     var scroll1 = Math.round(window.scrollY);
-// //     await delay(150);
-// //     var scroll2 = Math.round(window.scrollY);  
-// //     if (scroll1 == scroll2 && scroll1 != 0  && scroll1 != winHeight && scrollAnimRunning == false) {
-// //         scrollAnimRunning = true;
-// //         var drawerOpen = scroll1 > halfHeight;
-// //         if (drawerOpen) {
-// //             $("html, body").animate({ scrollTop: winHeight }, 1000);
-// //             $('html, body').promise().done(function(){ scrollAnimRunning = false;});
-// //         }
-// //         else {
-// //             $("html, body").animate({ scrollTop: 0 }, 1000);   
-// //             $('html, body').promise().done(function(){ scrollAnimRunning = false;});
-// //         }
-// //     }    
-// // }
