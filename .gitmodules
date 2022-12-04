@@ -1,0 +1,6 @@
+[submodule "pyshell"]
+	path = pyshell
+	url = https://github.com/Segilmez06/pyshell.git
+[submodule "BlockMaker"]
+	path = BlockMaker
+	url = https://github.com/Segilmez06/BlockMaker.git
