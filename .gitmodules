@@ -4,6 +4,6 @@
 [submodule "BlockMaker"]
 	path = BlockMaker
 	url = https://github.com/Segilmez06/BlockMaker.git
-[submodule "Games"]
+[submodule "games"]
 	path = games
-	url = https://github.com/Segilmez06/Games.git
+	url = https://github.com/Segilmez06/games.git
