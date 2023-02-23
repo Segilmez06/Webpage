@@ -5,7 +5,7 @@ document.addEventListener('visibilitychange', function (event) {
     if (document.hidden) {
         document.title = "A deadly page error occured!";
     } else {
-        document.title = "Page not found! - Sarp Eren EGILMEZ";
+        document.title = "Page not found! :: Sarp Eren EGILMEZ";
     }
 });
 
@@ -24,7 +24,7 @@ async function onLoad() {
     \\___/ \\___/|_|   |____/(_)
     `;
     console.log(msg);
-    var i = ["I lost my glasses.", "Where to find this page?", "Ghost isn't scary but 404 is!", "Say hi dude, that's server's attitude."];
+    var i = ["I've lost my glasses.", "Where to find this page?", "Ghost isn't scary but 404 is!", "Say hi dude, that's server's attitude."];
     var r = Math.floor(Math.random()*i.length);
     console.log(i[r]);
 }
