@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <!--
-                                  _ _
-  ___  __ _ _ __ _ __   ___  __ _(_) |_ __ ___   ___ ____  ___ ___  _ __ ___
- / __|/ _` | '__| '_ \ / _ \/ _` | | | '_ ` _ \ / _ \_  / / __/ _ \| '_ ` _ \
- \__ \ (_| | |  | |_) |  __/ (_| | | | | | | | |  __// / | (_| (_) | | | | | |
- |___/\__,_|_|  | .__/ \___|\__, |_|_|_| |_| |_|\___/___(_)___\___/|_| |_| |_|
-                |_|         |___/                    
+ ____             _ _                     ___   __
+/ ___|  ___  __ _(_) |_ __ ___   ___ ____/ _ \ / /_
+\___ \ / _ \/ _` | | | '_ ` _ \ / _ \_  / | | | '_ \
+ ___) |  __/ (_| | | | | | | | |  __// /| |_| | (_) |
+|____/ \___|\__, |_|_|_| |_| |_|\___/___|\___/ \___/
+            |___/                
 -->
+
 <head>
-    
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,45 +19,118 @@
 
     <link rel="stylesheet" href="/styles/style.css">
 
-    <script src="/js/DynaWP.js"></script>
     <script src="/js/jquery.min-3.6.1.js"></script>
     <script src="/js/utils.js"></script>
     <script src="/js/main.js"></script>
 
-    <meta name="keywords" content="erentronik, sarp eren egilmez, sarp eren eğilmez, sarp eren, sarp, sarp eğilmez, sarp egilmez, sarpegilmez, sarpegilmez.com, sarpegilmez.net, Segilmez06">
-    <meta name="keywords" content="ReadDown, SelectReader, efi-runner, MultiKey">  
+    <meta name="keywords"
+        content="erentronik, sarp eren egilmez, sarp eren eğilmez, sarp eren, sarp, sarp eğilmez, sarp egilmez, sarpegilmez, sarpegilmez.com, sarpegilmez.net, Segilmez06">
+    <meta name="keywords" content="ReadDown, SelectReader, efi-runner, MultiKey">
     <meta name="description" content="My projects and contact links - Sarp Eren EGILMEZ">
-    
+
 </head>
+
 <body>
-    <div id="wallpaper" effectscale="0.25" reactscale="1.2" effectimg="/img/background.webp"></div>
-    <div class="head">
-        <div class="filter fade">
-            <h1 class="title fade">Sarp Eren EĞİLMEZ</h1>
-            <div class="horizontal_line fade"></div>
-            <div class="scrolldown_section fade">
-                <h3 class="scrollInfo" id="scrollText">Scroll down to see more</h3>
-                <button class="scrollBtn" id="scrollDown" title="Scroll down"><i class="down"></i></button>
+    <div class="slide" id="first-slide">
+        <div class="slide-content fade">
+            <h1 class="">Sarp Eren EĞİLMEZ</h1>
+            <div class="horizontal-line"></div>
+            <h3 class="scrollInfo">Scroll down to see more</h3>
+        </div>
+    </div>
+
+    <div class="slide">
+        <div class="slide-content">
+            <h2>Who am I?</h2>
+            <p class="article">I'm a student, Linux user and hobbyist open source developer. I usually develop desktop
+                programs for my needs. I also love learning Linux on my free time. I mostly use C#, JavaScript, Python
+                and C++ (for Arduino).</p>
+        </div>
+    </div>
+
+    <div class="slide">
+        <div class="slide-content">
+            <h2>Top projects:</h2>
+            <div class="horizontal-align">
+                <div class="vertical-align">
+                    <div class="project-card">
+                        <p class="project-title">ReadDown</p>
+                        <p class="project-description">A fluent and simple MarkDown reader</p>
+                        <a href="https://github.com/Segilmez06/ReadDown" class="project-link"></a>
+                    </div>
+                    <div class="project-card">
+                        <p class="project-title">EFI-Runner</p>
+                        <p class="project-description">Use Qemu to run EFI files on Windows in the fastest way</p>
+                        <a href="https://github.com/Segilmez06/EFI-Runner" class="project-link"></a>
+                    </div>
+                    <div class="project-card">
+                        <p class="project-title">WSA-APKInstaller</p>
+                        <p class="project-description">Install APK's to WSA in one click</p>
+                        <a href="https://github.com/Segilmez06/WSA-APKInstaller" class="project-link"></a>
+                    </div>
+                </div>
+                <div class="vertical-align">
+                    <div class="project-card">
+                        <p class="project-title">Github+</p>
+                        <p class="project-description">Improve your GitHub experience</p>
+                        <a href="https://github.com/Segilmez06/Github-Plus" class="project-link"></a>
+                    </div>
+                    <div class="project-card">
+                        <p class="project-title">Multi Brightness Control</p>
+                        <p class="project-description">Easy way to sync brightness of external displays on laptops</p>
+                        <a href="https://github.com/Segilmez06/Multi-Brightness-Control" class="project-link"></a>
+                    </div>
+                    <div class="project-card">
+                        <p class="project-title">SharpRain</p>
+                        <p class="project-description">Matrix rain effect in C#</p>
+                        <a href="https://github.com/Segilmez06/SharpRain" class="project-link"></a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="links_container">
-        <div class="scrollup_section fade">
-            <button class="scrollBtn" id="scrollUp" title="Scroll up"><i class="up"></i></button>
+
+    <div class="slide">
+        <div class="slide-content">
+            <h2>Browser extensions:</h2>
+            <div class="horizontal-align">
+                <div class="project-card extension">
+                    <img class="project-icon" src="/img/project-icons/github-plus.webp" alt="">
+                    <p class="project-title">
+                        <a href="https://microsoftedge.microsoft.com/addons/detail/ngimaifebbbbmblpanmagpnjegjdjekb"
+                            class="project-store-link">Github+</a>
+                    </p>
+                    <p class="project-description">Improve your GitHub experience</p>
+                    <a href="https://github.com/Segilmez06/Github-Plus" class="project-link"></a>
+                </div>
+                <div class="project-card extension">
+                    <img class="project-icon" src="/img/project-icons/selectreader.webp" alt="">
+                    <p class="project-title">
+                        <a href="https://microsoftedge.microsoft.com/addons/detail/jkckfgkbdenicbejhidflkkbbmgngfog"
+                            class="project-store-link">SelectReader</a>
+                    </p>
+                    <p class="project-description">Read selected text out</p>
+                    <a href="https://github.com/Segilmez06/SelectReader" class="project-link"></a>
+                </div>
+            </div>
         </div>
-        <div class="links">
-            <h1 class="info-header">Browser Extensions:</h1>
-            <a class="link" href="https://microsoftedge.microsoft.com/addons/detail/jkckfgkbdenicbejhidflkkbbmgngfog"><img class="link_img" src="/img/project-icons/selectreader.webp" alt="SelectReader"></a>
-            <a class="link" href="https://microsoftedge.microsoft.com/addons/detail/ngimaifebbbbmblpanmagpnjegjdjekb"><img class="link_img" src="/img/project-icons/github-plus.webp" alt="Github Plus"></a>
-        </div>
-        <div class="links">
-            <h1 class="info-header">Social links:</h1>
-            <a class="link" href="https://github.com/Segilmez06"><img class="link_img" src="/img/icon/github-icon.png" alt="GitHub"></a>
-            <a class="link" href="https://www.technopat.net/sosyal/uye/366955/"><img class="link_img" src="/img/icon/technopat-icon.png" alt="Technopat Forum"></a>
-            <a class="link" href="https://twitter.com/Segilmez06"><img class="link_img" src="/img/icon/twitter-icon.png" alt="Twitter"></a>
-            <a class="link" href="https://www.youtube.com/channel/UCpUM9z9rE19STNYO7H5zbag"><img class="link_img" src="/img/icon/youtube-icon.png" alt="YouTube"></a>
-            <a class="link" href="https://namemc.com/profile/Segilmez06"><img class="link_img" src="/img/icon/namemc-icon.png" alt="NameMC"></a>
+    </div>
+
+    <div class="slide">
+        <div class="slide-content">
+            <h2>Contact:</h2>
+            <a class="link" href="https://github.com/Segilmez06"><img class="link_img" src="/img/icon/github-icon.png"
+                    alt="GitHub"></a>
+            <a class="link" href="https://www.technopat.net/sosyal/uye/366955/"><img class="link_img"
+                    src="/img/icon/technopat-icon.png" alt="Technopat Forum"></a>
+            <a class="link" href="https://twitter.com/Segilmez06"><img class="link_img" src="/img/icon/twitter-icon.png"
+                    alt="Twitter"></a>
+            <a class="link" href="https://www.youtube.com/channel/UCpUM9z9rE19STNYO7H5zbag"><img class="link_img"
+                    src="/img/icon/youtube-icon.png" alt="YouTube"></a>
+            <a class="link" href="https://namemc.com/profile/Segilmez06"><img class="link_img"
+                    src="/img/icon/namemc-icon.png" alt="NameMC"></a>
         </div>
     </div>
 </body>
+
 </html>
