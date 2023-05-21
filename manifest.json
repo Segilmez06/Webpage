@@ -1,0 +1,30 @@
+{
+    "background_color": "#383838",
+    "description": "Sarp Eren EGILMEZ's personal webpage.",
+    "dir": "ltr",
+    "display": "standalone",
+    "icons": [
+        {
+            "purpose": "maskable any",
+            "sizes": "64x64",
+            "src": "/res/img/logo-64.png",
+            "type": "image/png"
+        },
+        {
+            "purpose": "maskable any",
+            "sizes": "256x256",
+            "src": "/res/img/logo-256.png",
+            "type": "image/png"
+        },
+        {
+            "purpose": "maskable any",
+            "sizes": "2048x2048",
+            "src": "/res/img/logo-2048.png",
+            "type": "image/png"
+        }
+    ],
+    "lang": "en-US",
+    "name": "Personal Webpage :: Sarp Eren EGILMEZ",
+    "start_url": "/index.html",
+    "theme_color": "#FFFFFF"
+}
