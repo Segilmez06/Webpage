@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+
+/* GENERAL */
+* {
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+html,
+body {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    scrollbar-width: none;
+}
+
+body {
+    background-color: #383838;
+}
+
+::-webkit-scrollbar {
+    display: none;
+
+}
+
+::-webkit-scrollbar-track {
+    display: none;
+
+}
+
+::-webkit-scrollbar-thumb {
+    display: none;
+
+}
+
+
+/* SLIDES */
+.slide {
+    position: relative;
+    left: 0;
+    width: 100vw;
+    height: calc(100vh + 1px);
+    background-color: #383838;
+    text-align: center;
+    border-bottom: #888 1px solid;
+    /* box-sizing: border-box; */
+}
+
+.scroll.up {
+    height: 10vh;
+    width: 100vw;
+
+    position: absolute;
+    top: 0;
+}
+
+.scroll.down {
+    height: 10vh;
+    width: 100vw;
+
+    position: absolute;
+    bottom: 0;
+}
+
+.arrow {
+    border: solid #fff;
+    border-width: 3px 3px 0 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.arrow.up {
+    transform: rotate(-45deg);
+}
+
+.arrow.down {
+    transform: rotate(135deg);
+}
+
+.scrollBtn {
+    background: transparent;
+    border: 0;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.slide-content {
+    max-height: 80vh;
+    width: 90vw;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* SLIDE COMPONENTS */
+.slide-content>* {
+    color: #fff;
+    font-family: 'Open Sans', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.slide-content>h1 {
+    font-size: 7vw;
+}
+
+.slide-content>h2 {
+    font-size: 3vw;
+}
+
+.slide-content>h3 {
+    font-size: 2vw;
+}
+
+.slide-content>p {
+    font-size: 1.5vw;
+}
+
+.slide-content>p.article {
+    text-align: justify;
+}
+
+.slide-content>div.horizontal-line {
+    width: 80%;
+    height: 1px;
+    background-color: #fff;
+    margin: 10px auto;
+
+    border: solid #fff;
+    border-width: 1px 0 0 0;
+}
+
+.horizontal-align {
+    justify-content: stretch;
+    display: flex;
+
+    width: 100%;
+}
+
+.horizontal-align>* {
+    flex-grow: 1;
+}
+
+.vertical-align {
+    display: inline-block;
+    height: max-content;
+    min-height: 100px;
+}
+
+div.project-card {
+    border: 1px solid #888;
+    border-radius: 15px;
+    padding: 10px 30px;
+    box-sizing: border-box;
+    margin: 10px;
+    text-align: left;
+
+    position: relative;
+}
+
+div.project-card.extension {
+    text-align: center;
+}
+
+p.project-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #fff;
+    padding: 5px 0;
+    margin: 0;
+}
+
+p.project-description {
+    color: #fff;
+    padding: 5px 0;
+    margin: 0;
+}
+
+a.project-link,
+a.project-store-link {
+    color: #4172bb;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+a.project-link:hover,
+a.project-store-link:hover {
+    text-decoration: underline;
+}
+
+a.project-link {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+}
+
+a.project-link:after {
+    content: 'View on GitHub >>>';
+}
+
+
+/* MAIN SLIDE */
+#first-slide {
+    background-image: url("/img/background.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: soft-light;
+
+    background-size: 150%;
+    background-position-x: var(--reactX);
+    background-position-y: var(--reactY);
+    transition: all 0.25s linear;
+}
+
+.fade {
+    display: none;
+}
+
+.scrollInfo {
+    display: none;
+}
+
+
+/* LINK SLIDES */
+.links {
+    position: relative;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+}
+
+.link {
+    vertical-align: middle;
+}
+
+.link_img {
+    height: 15vw;
+    width: 15vw;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #ffffff;
+    border-radius: 15px;
+    background-color: transparent;
+    margin: 10px;
+
+    transition: all 0.1s linear;
+}
+
+.link_img:hover {
+    position: relative;
+    background-color: #6b6b6b;
+    border-color: #949494;
+    margin: 0px;
+}
+
+@media (orientation:landscape) {
+    .link_img {
+        height: 15vh;
+        width: 15vh;
+    }
+
+    .link_img:hover {
+        height: calc(15vh + 20px);
+        width: calc(15vh + 20px);
+    }
+}
+
+@media (orientation:portrait) {
+    .link_img {
+        height: 15vw;
+        width: 15vw;
+    }
+
+    .link_img:hover {
+        height: calc(15vw + 20px);
+        width: calc(15vw + 20px);
+    }
+
+    .links {
+        width: 75%;
+        margin-top: 15vw;
+    }
+}

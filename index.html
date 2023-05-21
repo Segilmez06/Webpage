@@ -15,13 +15,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Personal Webpage :: Sarp Eren EGILMEZ</title>
+    <title>Home :: Sarp Eren EGILMEZ</title>
 
+    <link rel="manifest" href="/manifest.json" crossorigin="use-credentials">
     <link rel="stylesheet" href="/styles/style.css">
 
-    <script src="/js/jquery.min-3.6.1.js"></script>
-    <script src="/js/utils.js"></script>
+    <script src="/js/jquery-3.7.0.min.js"></script>
     <script src="/js/main.js"></script>
+
 
     <meta name="keywords"
         content="erentronik, sarp eren egilmez, sarp eren eğilmez, sarp eren, sarp, sarp eğilmez, sarp egilmez, sarpegilmez, sarpegilmez.com, sarpegilmez.net, Segilmez06">
@@ -31,104 +32,230 @@
 </head>
 
 <body>
-    <div class="slide" id="first-slide">
-        <div class="slide-content fade">
-            <h1 class="">Sarp Eren EĞİLMEZ</h1>
-            <div class="horizontal-line"></div>
-            <h3 class="scrollInfo">Scroll down to see more</h3>
-        </div>
-    </div>
-
-    <div class="slide">
-        <div class="slide-content">
-            <h2>Who am I?</h2>
-            <p class="article">I'm a student, Linux user and hobbyist open source developer. I usually develop desktop
-                programs for my needs. I also love learning Linux on my free time. I mostly use C#, JavaScript, Python
-                and C++ (for Arduino).</p>
-        </div>
-    </div>
-
-    <div class="slide">
-        <div class="slide-content">
-            <h2>Top projects:</h2>
-            <div class="horizontal-align">
-                <div class="vertical-align">
-                    <div class="project-card">
-                        <p class="project-title">ReadDown</p>
-                        <p class="project-description">A fluent and simple MarkDown reader</p>
-                        <a href="https://github.com/Segilmez06/ReadDown" class="project-link"></a>
-                    </div>
-                    <div class="project-card">
-                        <p class="project-title">EFI-Runner</p>
-                        <p class="project-description">Use Qemu to run EFI files on Windows in the fastest way</p>
-                        <a href="https://github.com/Segilmez06/EFI-Runner" class="project-link"></a>
-                    </div>
-                    <div class="project-card">
-                        <p class="project-title">WSA-APKInstaller</p>
-                        <p class="project-description">Install APK's to WSA in one click</p>
-                        <a href="https://github.com/Segilmez06/WSA-APKInstaller" class="project-link"></a>
-                    </div>
+    <div id="main" class="main">
+        <div class="sidebar">
+            <div class="profileContainer">
+                <div class="profileImageContainer">
+                    <img class="profileImage" id="profileImage" src="/res/img/logo-256.png" alt="Logo">
                 </div>
-                <div class="vertical-align">
-                    <div class="project-card">
-                        <p class="project-title">Github+</p>
-                        <p class="project-description">Improve your GitHub experience</p>
-                        <a href="https://github.com/Segilmez06/Github-Plus" class="project-link"></a>
+                <div class="profileNameContainer">
+                    <h1 class="profileName">Sarp Eren EĞİLMEZ</h1>
+                </div>
+            </div>
+            <div class="linksContainer">
+                <div>
+                    <div class="activeIndicatorContainer">
+                        <div id="indicator" class="activeIndicator"></div>
                     </div>
-                    <div class="project-card">
-                        <p class="project-title">Multi Brightness Control</p>
-                        <p class="project-description">Easy way to sync brightness of external displays on laptops</p>
-                        <a href="https://github.com/Segilmez06/Multi-Brightness-Control" class="project-link"></a>
-                    </div>
-                    <div class="project-card">
-                        <p class="project-title">SharpRain</p>
-                        <p class="project-description">Matrix rain effect in C#</p>
-                        <a href="https://github.com/Segilmez06/SharpRain" class="project-link"></a>
+                    <div class="linkList">
+                        <button class="slideLink">
+                            Home
+                        </button>
+                        <button class="slideLink">
+                            About
+                        </button>
+                        <button class="slideLink">
+                            Projects
+                        </button>
+                        <button class="slideLink">
+                            Extensions
+                        </button>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <div class="slide">
-        <div class="slide-content">
-            <h2>Browser extensions:</h2>
-            <div class="horizontal-align">
-                <div class="project-card extension">
-                    <img class="project-icon" src="/img/project-icons/github-plus.webp" alt="">
-                    <p class="project-title">
-                        <a href="https://microsoftedge.microsoft.com/addons/detail/ngimaifebbbbmblpanmagpnjegjdjekb"
-                            class="project-store-link">Github+</a>
-                    </p>
-                    <p class="project-description">Improve your GitHub experience</p>
-                    <a href="https://github.com/Segilmez06/Github-Plus" class="project-link"></a>
+            <div class="socialContainer">
+                <div class="socialButton">
+                    <a href="https://github.com/Segilmez06" class="socialLink">
+                        <img class="socialImage" src="/res/svg/github.svg" alt="GitHub">
+                    </a>
                 </div>
-                <div class="project-card extension">
-                    <img class="project-icon" src="/img/project-icons/selectreader.webp" alt="">
-                    <p class="project-title">
-                        <a href="https://microsoftedge.microsoft.com/addons/detail/jkckfgkbdenicbejhidflkkbbmgngfog"
-                            class="project-store-link">SelectReader</a>
-                    </p>
-                    <p class="project-description">Read selected text out</p>
-                    <a href="https://github.com/Segilmez06/SelectReader" class="project-link"></a>
+                <div class="socialButton">
+                    <a href="https://www.instagram.com/segilmez06" class="socialLink">
+                        <img class="socialImage" src="/res/svg/instagram.svg" alt="Instagram">
+                    </a>
+                </div>
+                <div class="socialButton">
+                    <a href="https://namemc.com/profile/Segilmez06" class="socialLink">
+                        <img class="socialImage" src="/res/svg/minecraft.svg" alt="Minecraft">
+                    </a>
+                </div>
+                <div class="socialButton">
+                    <a href="https://t.me/Segilmez06" class="socialLink">
+                        <img class="socialImage" src="/res/svg/telegram.svg" alt="Telegram">
+                    </a>
+                </div>
+                <div class="socialButton">
+                    <a href="https://www.youtube.com/@Segilmez06" class="socialLink">
+                        <img class="socialImage" src="/res/svg/youtube.svg" alt="YouTube">
+                    </a>
                 </div>
             </div>
         </div>
-    </div>
+        <div class="slidearea">
 
-    <div class="slide">
-        <div class="slide-content">
-            <h2>Contact:</h2>
-            <a class="link" href="https://github.com/Segilmez06"><img class="link_img" src="/img/icon/github-icon.png"
-                    alt="GitHub"></a>
-            <a class="link" href="https://www.technopat.net/sosyal/uye/366955/"><img class="link_img"
-                    src="/img/icon/technopat-icon.png" alt="Technopat Forum"></a>
-            <a class="link" href="https://twitter.com/Segilmez06"><img class="link_img" src="/img/icon/twitter-icon.png"
-                    alt="Twitter"></a>
-            <a class="link" href="https://www.youtube.com/channel/UCpUM9z9rE19STNYO7H5zbag"><img class="link_img"
-                    src="/img/icon/youtube-icon.png" alt="YouTube"></a>
-            <a class="link" href="https://namemc.com/profile/Segilmez06"><img class="link_img"
-                    src="/img/icon/namemc-icon.png" alt="NameMC"></a>
+            <div class="slide mainSlide">
+                <div class="introContainer">
+                    <div class="intro">
+                        <span id="helloworld" class="typewriter"></span>
+                    </div>
+                    <div class="introDescriptionContainer">
+                        <p class="introDescription">
+                            This is how we speak in <a href="https://github.com/Segilmez06/CatLang" target="_blank" title="Click to open in new tab.">CatLang</a>.
+                        </p>
+                    </div>
+                </div>
+                <div class="summaryContainer">
+                    <p class="summary">
+                        Scroll down or navigate to see more...
+                    </p>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="slideTitleContainer">
+                    <h1 class="slideTitle">Who am I?</h1>
+                </div>
+                <div class="slideContainer">
+                    <p class="slideContent">
+                        I'm a student, Linux user, Redstone Engineer and hobbyist open source developer. I usually develop desktop programs for my needs. I love working with WinAPI - especially on .Net with DLL importing. I mostly use C#, JavaScript, Python and C++ (for Arduino).
+                    </p>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="slideTitleContainer">
+                    <h1 class="slideTitle">Top Projects</h1>
+                </div>
+                <div class="slideContainer">
+                    <div class="horizontalAlign">
+                        <div class="verticalAlign">
+
+                            <div class="projectCardContainer">
+                                <div class="projectCard">
+                                    <div class="projectTitleContainer">
+                                        <a class="projectTitle" href="https://github.com/Segilmez06/ReadDown">
+                                            ReadDown
+                                        </a>
+                                    </div>
+                                    <div class="projectDescriptionContainer">
+                                        <p class="projectDescription">
+                                            A <strong>fluent</strong> and simple <strong>MarkDown</strong> reader.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="projectCardContainer">
+                                <div class="projectCard">
+                                    <div class="projectTitleContainer">
+                                        <a class="projectTitle" href="https://github.com/Segilmez06/EFI-Runner">
+                                            EFI Runner
+                                        </a>
+                                    </div>
+                                    <div class="projectDescriptionContainer">
+                                        <p class="projectDescription">
+                                            Use <strong>Qemu</strong> to run <strong>EFI</strong> files on <strong>Windows</strong> in the fastest way.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="projectCardContainer">
+                                <div class="projectCard">
+                                    <div class="projectTitleContainer">
+                                        <a class="projectTitle" href="https://github.com/Segilmez06/WSA-APKInstaller">
+                                            WSA APKInstaller
+                                        </a>
+                                    </div>
+    
+                                    <div class="projectDescriptionContainer">
+                                        <p class="projectDescription">
+                                            Install <strong>APK</strong>'s to <strong>Windows Subsystem for Android</strong> in <strong>one click</strong>.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="verticalAlign">
+
+                            <div class="projectCardContainer">
+                                <div class="projectCard">
+                                    <div class="projectTitleContainer">
+                                        <a class="projectTitle" href="https://github.com/Segilmez06/Github-Plus">
+                                            Github+
+                                        </a>
+                                    </div>
+                                    <div class="projectDescriptionContainer">
+                                        <p class="projectDescription">
+                                            Improve your <strong>GitHub</strong> expirence.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="projectCardContainer">
+                                <div class="projectCard">
+                                    <div class="projectTitleContainer">
+                                        <a class="projectTitle" href="https://github.com/Segilmez06/Multi-Brightness-Control">
+                                            Multi Brightness Control
+                                        </a>
+                                    </div>
+                                    <div class="projectDescriptionContainer">
+                                        <p class="projectDescription">
+                                            Easy way to <strong>sync</strong> your multi monitor <strong>brightness</strong>.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="projectCardContainer">
+                                <div class="projectCard">
+                                    <div class="projectTitleContainer">
+                                        <a class="projectTitle" href="https://github.com/Segilmez06/SharpRain">
+                                            SharpRain
+                                        </a>
+                                    </div>
+                                    <div class="projectDescriptionContainer">
+                                        <p class="projectDescription">
+                                            <strong>Matrix Rain</strong> effect in your terminal with <strong>C#</strong>.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="slide">
+                <div class="slideTitleContainer">
+                    <h1 class="slideTitle">Browser Extensions</h1>
+                </div>
+                <div class="slideContainer">
+                    <h1>Coming soon...</h1>
+                    <!-- <div class="horizontalAlign">
+                        <div class="project-card extension">
+                            <img class="project-icon" src="/res/img/github-plus.webp" alt="">
+                            <p class="project-title">
+                                <a href="https://microsoftedge.microsoft.com/addons/detail/ngimaifebbbbmblpanmagpnjegjdjekb"
+                                    class="project-store-link">Github+</a>
+                            </p>
+                            <p class="project-description">Improve your GitHub experience</p>
+                            <a href="https://github.com/Segilmez06/Github-Plus" class="project-link"></a>
+                        </div>
+                        <div class="project-card extension">
+                            <img class="project-icon" src="/res/img/selectreader.webp" alt="">
+                            <p class="project-title">
+                                <a href="https://microsoftedge.microsoft.com/addons/detail/jkckfgkbdenicbejhidflkkbbmgngfog"
+                                    class="project-store-link">SelectReader</a>
+                            </p>
+                            <p class="project-description">Read selected text out</p>
+                            <a href="https://github.com/Segilmez06/SelectReader" class="project-link"></a>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
         </div>
     </div>
 </body>
