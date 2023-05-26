@@ -14,27 +14,16 @@ html, body {
     padding: 0;
     width: 100vw;
     height: 100vh;
-    scrollbar-width: none;
 }
 
 html {
     background-color: #383838;
 }
-
 body {
     color: #fff;
     font-family: 'Open Sans', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background: linear-gradient(135deg, hsl(120, 50%, 20%), hsl(180, 50%, 20%));
-}
-
-::-webkit-scrollbar {
-    display: none;
-}
-::-webkit-scrollbar-track {
-    display: none;
-}
-::-webkit-scrollbar-thumb {
-    display: none;
+    overflow: hidden;
 }
 .main {
     width: 100vw;
@@ -139,7 +128,7 @@ body {
     color: #fff;
     width: 100%;
     text-align: left;
-    font-size: 2.5vmin;
+    font-size: 2vmin;
 
     transition: all 0.1s linear;
     cursor: pointer;
@@ -159,32 +148,30 @@ body {
     justify-content: space-evenly;
     align-items: flex-end;
     padding: 0;
-    /* padding-bottom: 1vmin; */
     margin: 0;
     border: 0;
 }
 .socialButton {
     width: max-content;
     height: max-content;
-    padding: 1.75vmin;
+    padding: 1vmin;
     margin: 0;
     border: 0;
     background-color: transparent;
     cursor: pointer;
-    transition: all 0.1s linear;
     box-sizing: border-box;
-}
-.socialButton:hover {
-    transform: scale(1.5);
-}
-.socialButton:active {
-    transform: scale(0.75);
 }
 .socialImage {
     width: 100%;
-    /* height: 100%; */
     object-fit: contain;
-    filter: invert(1);
+    transition: all 0.1s linear;
+    transform: scale(1);
+}
+.socialImage:hover {
+    transform: scale(1.5);
+}
+.socialImage:active {
+    transform: scale(0.75);
 }
 
 
@@ -296,6 +283,85 @@ body {
     font-weight: normal;
 }
 
+/* EXTENSION CARDS */
+.extensionCardContainer {
+    padding: 2.5vmin;
+    box-sizing: border-box;
+}
+.extensionCard {
+    width: 100%;
+    height: 100%;
+    padding: 2.5vmin;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #888;
+    background-color: transparent;
+    transition: all 0.1s linear;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.extensionIconContainer {
+    width: 25vmin;
+    height: 25vmin;
+    object-fit: contain;
+}
+.extensionIcon {
+    width: 100%;
+    height: 100%;
+}
+.extensionTitleContainer {
+    width: 100%;
+    height: max-content;
+    text-align: center;
+    margin: 1vmin 0;
+}
+.extensionTitle {
+    font-size: 3.5vmin;
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+}
+.extensionDescriptionContainer {
+    width: 100%;
+    height: 100%;
+    height: max-content;
+    text-align: center;
+    margin: 3vmin 0;
+}
+.extensionDescription {
+    font-size: 2vmin;
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+}
+.extensionLinksContainer {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.extensionLink {
+    width: 3vmin;
+    height: 3vmin;
+    object-fit: contain;
+    cursor: pointer;
+    transition: all 0.1s linear;
+    padding: 1vmin;
+}
+.extensionLinkIcon {
+    width: 100%;
+    height: 100%;
+}
+.extensionLink:hover {
+    transform: scale(1.5);
+}
+
+
 
 
 /* MAIN SLIDE */
@@ -326,6 +392,10 @@ body {
     padding-right: 2vmin;
     border-right: 0.75vmin solid #6dacff;
     animation: blink-caret 1s infinite step-end;
+}
+.typewriter > span {
+    -webkit-user-select: text;
+    user-select: text;
 }
 @keyframes blink-caret {
     from, to { border-color: transparent }

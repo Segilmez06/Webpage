@@ -53,9 +53,13 @@ async function onLoad() {// Onload handler, basically
     }
     $('#profileImage').click(function () {setSlide(0)});
 
-    $('.slide').eq(0).fadeIn(250);
+    setSlide(0);
     window.addEventListener('wheel', scrollHandler);
-    
+
+    typeWriterEffect();
+}
+
+function typeWriterEffect(){
     let delaybefore = 250;
     let speed = 100;
 
@@ -120,6 +124,7 @@ async function onLoad() {// Onload handler, basically
         }, msg4.length * speed);
     }, ((msg1 + msg2 + msg3).length * speed) + delaybefore);
 }
+
 function heckerMode() {// Some dumb feature
     console.log("😼 HeckerCat is here for you.");
 }
