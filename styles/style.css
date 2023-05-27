@@ -210,6 +210,18 @@ body {
 
 
 /* SLIDE COMPONENTS */
+:root {
+    --card-border-radius: 15px;
+    --card-border-style: 1px solid #888;
+
+    --card-title-size: 4vmin;
+    --card-description-size: 2vmin;
+
+    --card-hover-background: #66666666;
+    --card-hover-border: #949494;
+
+    --card-transition: all 0.1s linear;;
+}
 
 /* ALIGN ELEMENTS */
 .horizontalAlign {
@@ -243,27 +255,27 @@ body {
     height: 100%;
     padding: 2.5vmin;
     box-sizing: border-box;
-    border-radius: 5px;
-    border: 1px solid #888;
+    border-radius: var(--card-border-radius);
+    border: var(--card-border-style);
     background-color: transparent;
-    transition: all 0.1s linear;
+    transition: var(--card-transition);
 }
 .projectCard:hover {
-    background-color: #6666;
-    border-color: #949494;
+    background-color: var(--card-hover-background);
+    border-color: var(--card-hover-border);
 }
 .projectTitleContainer {
     width: 100%;
     height: max-content;
 }
 .projectTitle {
-    font-size: 4vmin;
+    font-size: var(--card-title-size);
     margin: 0;
     padding: 0;
     text-decoration: none;
     color: #ffffff;
     cursor: pointer;
-    transition: all 0.1s linear;
+    transition: var(--card-transition);
 }
 .projectTitle:hover {
     color: #7e7eff;
@@ -273,7 +285,7 @@ body {
     height: max-content;
 }
 .projectDescription {
-    font-size: 2vmin;
+    font-size: var(--card-description-size);
     margin: 0;
     padding: 0;
     color: #ffffff;
@@ -293,10 +305,10 @@ body {
     height: 100%;
     padding: 2.5vmin;
     box-sizing: border-box;
-    border-radius: 5px;
-    border: 1px solid #888;
+    border-radius: var(--card-border-radius);
+    border: var(--card-border-style);
     background-color: transparent;
-    transition: all 0.1s linear;
+    transition: var(--card-transition);
 
     display: flex;
     flex-direction: column;
@@ -319,7 +331,7 @@ body {
     margin: 1vmin 0;
 }
 .extensionTitle {
-    font-size: 3.5vmin;
+    font-size: var(--card-title-size);
     margin: 0;
     padding: 0;
     color: #ffffff;
@@ -332,7 +344,7 @@ body {
     margin: 3vmin 0;
 }
 .extensionDescription {
-    font-size: 2vmin;
+    font-size: var(--card-description-size);
     margin: 0;
     padding: 0;
     color: #ffffff;
@@ -350,7 +362,7 @@ body {
     height: 3vmin;
     object-fit: contain;
     cursor: pointer;
-    transition: all 0.1s linear;
+    transition: var(--card-transition);
     padding: 1vmin;
 }
 .extensionLinkIcon {
@@ -359,6 +371,44 @@ body {
 }
 .extensionLink:hover {
     transform: scale(1.5);
+}
+
+/* GAME CARDS */
+.gameCardGrid {
+    padding: 5vmin;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.gameCardContainer {
+    flex: 1 1 0px;
+
+    margin: 0;
+    padding: 2.5vmin;
+    /* width: max-content; */
+    height: max-content;
+}
+.gameCard {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    padding: 3vmin;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: #fff;
+    border-radius: var(--card-border-radius);
+    border: var(--card-border-style);
+    transition: var(--card-transition);
+}
+.gameCard:hover {
+    background-color: var(--card-hover-background);
+    border-color: var(--card-hover-border);
+}
+.gameTitle {
+    font-size: var(--card-title-size);
+    text-align: center;
 }
 
 

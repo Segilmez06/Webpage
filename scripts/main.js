@@ -188,19 +188,3 @@ function applyVisibility (){
 
     $('#main').css('backdrop-filter', `hue-rotate(${(currentSlide) * 60}deg)`);
 }
-
-
-
-
-
-// document.addEventListener('DOMContentLoaded', () => {
-//     fetch('/styles/style.scss')
-//         .then((response) => response.text())
-//         .then((scss) => {
-//             Sass.compile(scss, (result) => {
-//                 const style = document.createElement('style');
-//                 style.innerHTML = result.text;
-//                 document.head.appendChild(style);
-//             });
-//         });
-// });
