@@ -1,6 +1,0 @@
-[submodule "BlockMaker"]
-	path = BlockMaker
-	url = https://github.com/Segilmez06/BlockMaker.git
-[submodule "games"]
-	path = games
-	url = https://github.com/Segilmez06/Games.git
