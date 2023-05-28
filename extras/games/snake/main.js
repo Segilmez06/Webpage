@@ -40,7 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function setupGame(){
+    active = false;
+
     clearBoard();
+
     snake = [
         [7, 7],
         [7, 8],
@@ -48,19 +51,20 @@ function setupGame(){
     ];
     score = 0;
     direction = 1;
+
     clearInterval(loop);
     interval = 200;
     loop = setInterval(processGame, interval);
+
     document.querySelectorAll('.pixel').forEach((pixel) => {
         pixel.classList.remove('blink');
     });
+
     writeScore();
     document.querySelector('.status').innerText = 'Press arrow keys to start.';
 
     newFood();
-
     drawSnake();
-    
 }
 
 document.addEventListener('keydown', (event) => {
