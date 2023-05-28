@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+</head>
+<body>
+    <div class="gameContainer">
+        <div class="titleContainer">
+            <h1 class="title">
+                Snake
+            </h1>
+        </div>
+        
+        <div class="snakeContainer">
+            <div class="gameBoardContainer">
+                <div class="gameBoard">
+                    <div class="pixel"></div>
+                </div>
+            </div>
+            <div class="controlsContainer">
+                <div class="controls">
+                    <div class="controlBtnContainer">
+                        <button class="controlBtn" direction="1" title="Set direction to up"><div class="arrow up"></div></button>
+                    </div>
+                    <div class="controlBtnContainer">
+                        <button class="controlBtn" direction="2" title="Set direction to left"><div class="arrow left"></div></button>
+                        <button class="controlBtn" direction="0" title="Set direction to right"><div class="arrow right"></div></button>
+                    </div>
+                    <div class="controlBtnContainer">
+                        <button class="controlBtn" direction="3" title="Set direction to down"><div class="arrow down"></div></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scoreContainer">
+            <h2 class="scoreLabel">Score:</h2>
+            <h2 class="score">0</h2>
+        </div>
+
+        <div class="statusContainer">
+            <h2 class="status"></h2>
+        </div>
+
+        <div class="resetBtnContainer">
+            <button class="resetBtn">
+                Restart
+            </button>
+        </div>
+    </div>
+</body>
+</html>

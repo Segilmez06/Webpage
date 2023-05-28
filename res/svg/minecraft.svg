@@ -1,10 +1,20 @@
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools -->
-<svg width="800px" height="800px" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg" fill="#000000">
-<g id="SVGRepo_bgCarrier" stroke-width="0"/>
-<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
-<g id="SVGRepo_iconCarrier">
-<path d="M0 0h192v192H0z" style="fill:none"/>
-<path d="M27.55 22v45.33h45.33v23.12h-22.2V170h22.2v-34.23h46.24V170h22.21V90.45h-22.21V67.33h45.33V22h-45.33v45.33H72.88V22H27.55z" style="stroke:#000000;stroke-linejoin:round;stroke-width:12px;fill:none"/>
-</g>
-</svg>
+<?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo
+Mixer Tools -->
+<svg width="800px" height="800px" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg"
+    fill="#fff">
+
+    <g id="SVGRepo_bgCarrier" stroke-width="0" />
+
+    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
+
+    <g id="SVGRepo_iconCarrier">
+
+        <path d="M0 0h192v192H0z" style="fill:none" />
+
+        <path
+            d="M27.55 22v45.33h45.33v23.12h-22.2V170h22.2v-34.23h46.24V170h22.21V90.45h-22.21V67.33h45.33V22h-45.33v45.33H72.88V22H27.55z"
+            style="stroke:#fff;stroke-linejoin:round;stroke-width:12px;fill:none" />
+
+    </g>
+
+</svg>

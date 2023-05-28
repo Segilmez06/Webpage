@@ -1,0 +1,91 @@
+@import url('/res/font/fonts.css');
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 14px;
+    color: #5586e2;
+    background-color: #383838;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.gameContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.titleContainer {
+    width: max-content;
+    padding: 1vmin;
+    margin: 2vmin 0;
+}
+.title {
+    font-size: 7vmin;
+    font-family: Bitcheese;
+}
+
+.gridContainer {
+    width: 50vmin;
+    height: 50vmin;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+
+    display: grid;
+    gap: 0.5vmin;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+.gridItem {
+    background-color: #383838;
+
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: "Permanent Marker", cursive;
+    font-size: 10vmin;
+
+    color: #fff;
+}
+.gridItem.clickable:hover {
+    background-color: #5a5a5a;
+}
+
+.statusContainer {
+    width: max-content;
+    padding: 1vmin;
+    margin: 1vmin 0;
+}
+.status {
+    font-size: 3vmin;
+}
+
+.resetBtnContainer {
+    padding: 1vmin;
+    margin: 1vmin 0;
+}
+.resetBtn {
+    background-color: #2568e6;
+    width: 15vmin;
+    height: 5vmin;
+    font-size: 2.5vmin;
+    color: #fff;
+    border: 2px solid #8eb2f5;
+    border-radius: 7px;
+}
+.resetBtn:hover {
+    background-color: #134db8;
+}
+.resetBtn:active {
+    background-color: #003494;
+}
