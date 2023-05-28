@@ -6,6 +6,13 @@ let snake = [
     [7, 9]
 ];
 
+let ignoreDirections = [
+    [0, 2],
+    [1, 3],
+    [2, 0],
+    [3, 1]
+];
+
 // 0 - right, 1 - up, 2 - left, 3 - down
 let direction = 1;
 let interval = 200;
@@ -41,6 +48,9 @@ function setupGame(){
     ];
     score = 0;
     direction = 1;
+    clearInterval(loop);
+    interval = 200;
+    loop = setInterval(processGame, interval);
     document.querySelectorAll('.pixel').forEach((pixel) => {
         pixel.classList.remove('blink');
     });
@@ -67,12 +77,6 @@ document.addEventListener('keydown', (event) => {
         case 'ArrowDown':
             setDirection(3);
             break;
-        case 'n':
-            appendSnake();
-            break;
-        default:
-            console.log(event.key);
-            break;
     }
 });
 
@@ -83,10 +87,17 @@ function setDirection(_direction){
         active = true;
     }
     document.querySelector('.status').innerText = 'Playing...';
+    
+    if(ignoreDirections.some(
+        (e) => e[0] == direction && e[1] == _direction)
+        ) return;
+
     direction = _direction;
 }
 
-let loop = setInterval((e) => {
+let loop = setInterval(processGame, interval);
+
+function processGame(){
     if(active){
         if(addToEnd){
             snake.push([0, 0]);
@@ -142,15 +153,24 @@ let loop = setInterval((e) => {
             appendSnake();
             newFood();
         };
+
+        if(snake.length > Math.pow(15, 2) - 1){
+            active = false;
+            document.querySelectorAll('.pixel').forEach((pixel) => {
+                pixel.classList.add('blink');
+            });
+            document.querySelector('.status').innerText = 'You won!';
+        }
+
+        clearBoard();
+        drawSnake();
     }
 
     if(active){
-        clearBoard();
-        drawSnake();
         drawFood();
         writeScore();
     }
-}, interval);
+}
 
 function clearBoard(){
     document.querySelectorAll('.pixel').forEach((pixel) => {
@@ -201,6 +221,12 @@ function drawFood(){
 function appendSnake(){
     score += 1;
     addToEnd = true;
+
+    if(interval > 100){
+        clearInterval(loop);
+        interval -= 5;
+        loop = setInterval(processGame, interval);
+    }
 }
 
 function writeScore(){

@@ -29,6 +29,8 @@ html, body {
 .title {
     font-size: 7vmin;
     font-family: Bitcheese;
+    margin: 0;
+    padding: 0;
 }
 
 .snakeContainer {
