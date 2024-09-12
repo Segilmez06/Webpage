@@ -7,24 +7,22 @@
     <script>
         let lines = [
             [
-                "😯",
-                "😶‍🌫️",
-                "🤔"
-            ],
-            [
-                "OOPS, this doesn't exists!",
-                "This page seems to have disappeared!",
-                "Server got confused!"
+                "🤔 Could something have gone wrong?",
+                "😶‍🌫️ OOPS, this doesn't exists!",
+                "😶‍🌫️ This page seems to have disappeared!",
+                "😯 Server got confused!",
+                "🍵 Have some <code>0xC0FFEE!</code>"
             ],
             [
                 "Sorry, we don't have what you requested yet...",
                 "We can't serve this page right now.",
-                "This page might be deleted."
+                "This page may have been deleted.",
+                "I probably won't fix this later."
             ]
         ];
         document.addEventListener('DOMContentLoaded', () => {
-            document.querySelector('h1').innerText = lines[0][Math.floor(Math.random() * lines[0].length)] + " " + lines[1][Math.floor(Math.random() * lines[1].length)];
-            document.querySelector('h3').innerText = lines[2][Math.floor(Math.random() * lines[2].length)];
+            document.querySelector('h1').innerHTML = lines[0][Math.floor(Math.random() * lines[0].length)];
+            document.querySelector('h3').innerHTML = lines[1][Math.floor(Math.random() * lines[1].length)];
         });
     </script>
     <style>
