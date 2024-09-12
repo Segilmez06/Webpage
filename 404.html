@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarp Eren EGILMEZ</title>
+    <script>
+        let lines = [
+            [
+                "😯",
+                "😶‍🌫️",
+                "🤔"
+            ],
+            [
+                "OOPS, this doesn't exists!",
+                "This page seems to have disappeared!",
+                "Server got confused!"
+            ],
+            [
+                "Sorry, we don't have what you requested yet...",
+                "We can't serve this page right now.",
+                "This page might be deleted."
+            ]
+        ];
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('h1').innerText = lines[0][Math.floor(Math.random() * lines[0].length)] + " " + lines[1][Math.floor(Math.random() * lines[1].length)];
+            document.querySelector('h3').innerText = lines[2][Math.floor(Math.random() * lines[2].length)];
+        });
+    </script>
+    <style>
+        * {
+            user-select: none;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            background: #26034d;
+            background: radial-gradient(circle, #26034d 0%, #00132a 100%);
+        }
+
+        h1, h3 {
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+
+            margin: 0;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>😶‍🌫️ OOPS, this doesn't exists!</h1>
+    <h3>Sorry, we don't have what you requested yet...</h3>
+</body>
+</html>
