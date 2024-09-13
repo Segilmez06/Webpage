@@ -1,0 +1,92 @@
+:root {
+    --ring-width: 2.5vmin;
+    --ring-color: linear-gradient(135deg, #5f0775, #042c5e);
+    --ring-rotate: 1s;
+}
+
+body {
+    background: #000;
+    overflow: hidden;
+}
+
+.rounded {
+    border-radius: 50%;
+}
+.fill-parent {
+    height: 100%;
+    width: 100%;
+}
+
+main {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vmin;
+    width: 100vmin;
+}
+
+.wallpaper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vmin;
+    height: 100vmin;
+    background: linear-gradient(135deg, #5f0775, #042c5e);
+    animation: rotate var(--ring-rotate) infinite linear;
+    z-index: -2;
+}
+@keyframes rotate {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}        
+
+.app {
+    z-index: 1;
+    padding: var(--ring-width);
+}
+
+.content {
+    background: #000;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 80%;
+}
+
+.profile-image-container {
+    width: 30vmin;
+    height: 30vmin;
+
+    margin: 5vmin;
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.profile-name-container {
+    padding: 12vmin 0;
+}
+
+.profile-name {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-size: 10vmin;
+    font-weight: 400;
+    text-align: center;
+}
