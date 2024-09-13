@@ -27,7 +27,7 @@ function pageLoaded(){
     
 
     document.querySelectorAll(".links-box > a:not([href])").forEach((e) => {
-        e.addEventListener("click", () => { alert("Sorry, this page is not ready yet!\nStay tuned, work in progress..."); });
+        e.addEventListener("click", () => { alert("Sorry, this page is not available!\nStay tuned, work in progress..."); });
     });
 
     window.addEventListener('focus', () => {
