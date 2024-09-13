@@ -1,5 +1,3 @@
-document.addEventListener('DOMContentLoaded', pageLoaded);
-
 let GalaxyWatches = [
     "SM-R860", // 4
     "SM-R870", // 4
@@ -16,13 +14,17 @@ let GalaxyWatches = [
     "SM-L705F" // Ultra
 ];
 
-function pageLoaded(){
-    for (let i = 0; i < GalaxyWatches.length; i++) {
-        if (navigator.userAgent.toUpperCase().includes(GalaxyWatches[i])) {
-            window.location.href = "/GalaxyWatch";
-            break;
-        }
+for (let i = 0; i < GalaxyWatches.length; i++) {
+    if (navigator.userAgent.toUpperCase().includes(GalaxyWatches[i])) {
+        window.location.href = "/GalaxyWatch";
+        break;
     }
+}
+
+document.addEventListener('DOMContentLoaded', pageLoaded);
+
+function pageLoaded(){
+    
 
     document.querySelectorAll(".links-box > a:not([href])").forEach((e) => {
         e.addEventListener("click", () => { alert("Sorry, this page is not ready yet!\nStay tuned, work in progress..."); });

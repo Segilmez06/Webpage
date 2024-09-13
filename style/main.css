@@ -7,6 +7,9 @@
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+
+
+
 * {
     box-sizing: border-box;
     user-select: none;
@@ -14,13 +17,13 @@
     font-family: 'Work Sans', Arial, Helvetica, sans-serif;
 }
 
+
 html, body {
     margin: 0;
     padding: 0;
     height: 100%;
     width: 100%;
 }
-
 
 
 body {
@@ -37,6 +40,8 @@ body {
     justify-content: center;
 }
 
+
+/* === ANIMATED BACKGROUND === */
 body::before {
     content: '';
     position: fixed;
@@ -49,7 +54,6 @@ body::before {
 
     animation: animated_background 20s linear infinite alternate;
 }
-
 @keyframes animated_background {
     from {
         background: #00000000;
@@ -62,12 +66,10 @@ body::before {
 }
 
 
-
-
-
+/* === MAIN === */
 main {
-    width: 50vw;
-    height: 50vh;
+    /* width: 50vw; */
+    /* height: 50vh; */
 
     background: #3b027c27;
     backdrop-filter: blur(10vw);
@@ -81,133 +83,156 @@ main {
     justify-content: center;
     align-items: stretch;
 
+    padding: min(4vh, 2vw);
+}
 
 
-    .profile-box {
-        height: 40%;
-        
-        display: inline-flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        
-        .profile-photo-container {
-            height: 100%;
-            margin: 0 1vw;
 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        
-            .profile-photo {
-                aspect-ratio: 1;
-                height: 10vh;
-                border-radius: 50%;
-            }
-        }
-        
-        .profile-name-container {
-            height: 100%;
-            margin: 0 1vw;
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        
-            .profile-name {
-                margin: 0;
-                padding: 0;
-            
-                font-family: 'Work Sans', Arial, Helvetica, sans-serif;
-                font-weight: 450;
-                font-size: 7vh;
-            }
-        }
-    }
+/* === PROFILE === */
+main > .profile-box {
+    height: min(20vh, 10vw);
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+main > .profile-box > .profile-photo-container {
+    height: 100%;
+    margin: 0 1vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* flex: 1; */
+}
+main > .profile-box > .profile-photo-container > .profile-photo {
+    aspect-ratio: 1;
+    height: min(10vh, 5vw);
+    border-radius: 50%;
+}
+
+main > .profile-box > .profile-name-container {
+    height: 100%;
+    margin: 0 1vw;
+
+    /* display: inline-block; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* flex: 7; */
+}
+main > .profile-box > .profile-name-container > .profile-name {
+    margin: 0;
+    padding: 0;
+
+    /* max-width: calc(50vw - 20vh); */
+    /* display: inline-block;  */
+    /* width: fit-content; */
+
+    text-align: center;
+    /* display: ; */
+    /* word-wrap: break-word; */
+
+    font-family: 'Work Sans', Arial, Helvetica, sans-serif;
+    font-weight: 450;
+    font-size: min(8vh, 4vw);
+}
+
+
+
+
+/* === INFO === */
+main > .info-box {
+    height: min(7.5vh, 3.75vw);
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+main > .info-box > .info-text {
+    margin: 0;
+    padding: 0;
+    
+    text-align: center;
+
+    font-size: min(2vh, 1vw);
+}
+
+
+
+
+/* === LINKS === */
+main > .links-box {
+    /* width: min(22.5vh, 12vw); */
+    /* height: 45%; */
+    margin: 0;
+    padding: 3vh 3vw;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+main > .links-box > .link-container {
+    width: min(12vh, 6vw);
+    aspect-ratio: 1;
+
+    border: 1px solid #512a7cb6;
+    border-radius: 25%;
+    overflow: hidden;
+
+    transition: border-color 0.1s ease-in;
+
+    text-decoration: none;
+
+    
+}
+
+main > .links-box > .link-container > .link-icon-container {
+    height: 100%;
+    padding: 0 1vw;
+
+    transition: height 0.1s ease-in, padding 0.1s ease-in;
+
+    
+}
+main > .links-box > .link-container > .link-icon-container > svg {
+    height: 100%;
+    width: 100%;
+
+    object-fit: contain;
+}
+main > .links-box > .link-container > .link-desc-container {
+    opacity: 0;
+    position: relative;
+
+    transition: opacity 0.1s ease-in;
+
+    
+}
+main > .links-box > .link-container > .link-desc-container > .link-desc {
+    margin: 0;
+    padding: 0;
+
+    text-align: center;
+    font-weight: 450;
+    font-size: 2.5vh;
+}
+
+main > .links-box > .link-container:hover {
+    border-color: #ac78ff;
+
     
     
-    
-    .info-box {
-        height: 15%;
-    
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-    
-        .info-text {
-            margin: 0;
-            padding: 0;
-            
-            text-align: center;
-        }
-    }
-    
-    
-    
-    .links-box {
-        height: 45%;
-        margin: 0;
-        padding: 5vh 3vw;
-    
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-    
-        .link-container {
-            height: 100%;
-            aspect-ratio: 1;
-
-            border: 1px solid #512a7cb6;
-            border-radius: 25%;
-            overflow: hidden;
-        
-            transition: border-color 0.1s ease-in;
-
-            text-decoration: none;
-        
-            .link-icon-container {
-                height: 100%;
-                padding: 1vw;
-
-                transition: height 0.1s ease-in, padding 0.1s ease-in;
-
-                svg {
-                    height: 100%;
-                    width: 100%;
-
-                    object-fit: contain;
-                }
-            }
-            
-            .link-desc-container {
-                opacity: 0;
-                position: relative;
-            
-                transition: opacity 0.1s ease-in;
-
-                .link-desc {
-                    margin: 0;
-                    padding: 0;
-
-                    text-align: center;
-                    font-weight: 450;
-                    font-size: 2.5vh;
-                }
-            }
-            
-        }
-        .link-container:hover {
-            border-color: #ac78ff;
-        
-            .link-icon-container {
-                height: 65%;
-                padding: 0.5vw;
-            }
-            
-            .link-desc-container {
-                opacity: 1;
-            }
-            
-        }
-    }
+}
+main > .links-box > .link-container:hover > .link-icon-container {
+    height: 65%;
+    padding: 0.5vw;
+}
+main > .links-box > .link-container:hover > .link-desc-container {
+    opacity: 1;
 }
