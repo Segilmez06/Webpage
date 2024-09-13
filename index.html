@@ -90,11 +90,19 @@
             return clientType;
         }
 
+
         setTimeout(() => {
+            const url = window.location.href;
+            if (url.includes("#")) {
+            const clientType = url.split("#")[1];
+            applyClient(clientType);
+            window.history.pushState({}, document.title, "/");
+            } else {
             detectLoad();
             setInterval(() => {
-            detectLoad();
+                detectLoad();
             }, 1000);
+            }
         }, 0);
         
     </script>

@@ -35,7 +35,7 @@ main {
     height: 100vmin;
     background: linear-gradient(135deg, #5f0775, #042c5e);
     animation: rotate var(--ring-rotate) infinite linear;
-    z-index: -2;
+    z-index: 1;
 }
 @keyframes rotate {
     from {transform: rotate(0deg);}
@@ -43,7 +43,7 @@ main {
 }        
 
 .app {
-    z-index: 1;
+    z-index: 2;
     padding: var(--ring-width);
 }
 
