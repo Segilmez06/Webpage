@@ -4,6 +4,7 @@ let lines = [
     [
         "👋 Hey there, mobile user!",
         "📱 Welcome to the mobile version!",
+        "🌐 Giga-Mega Placeholder!",
     ],
     [
         "This page is on the way...",

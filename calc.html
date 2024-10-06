@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>90's Web Style</title>
+    <style>
+        body {
+            background-color: #00FFFF;
+            font-family: 'Comic Sans MS', cursive;
+            text-align: center;
+            color: #FF00FF;
+        }
+
+        h1 {
+            font-size: 40px;
+            text-shadow: 2px 2px #000;
+            animation: flash 1s infinite;
+        }
+
+        @keyframes flash {
+            0% { color: #FF0000; }
+            50% { color: #FFFF00; }
+            100% { color: #FF0000; }
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 30px;
+            background-color: #00FF00;
+            border: 5px solid #0000FF;
+            font-size: 20px;
+            text-decoration: none;
+            color: #0000FF;
+            animation: buttonflash 1.5s infinite;
+        }
+
+        @keyframes buttonflash {
+            0% { background-color: #00FF00; }
+            50% { background-color: #FF00FF; }
+            100% { background-color: #00FF00; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Do you need a calculator?</h1>
+    <a class="button" href="#" onclick="window.location.href='calculator:';">Click here to get it!</a>
+</body>
+</html>
