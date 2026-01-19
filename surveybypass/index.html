@@ -128,6 +128,10 @@
             box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
         }
 
+        .bookmark-btn:active {
+            cursor: grabbing;
+        }
+
         .hint { margin-top: 25px; font-size: 0.85rem; color: var(--hint-color); }
     </style>
 </head>
@@ -138,13 +142,15 @@
     <div class="container">
         <div class="content-box">
             <h1>Hızlı Anket Doldurma</h1>
-            <p>Butonu <b>sık kullanılanlar</b> çubuğuna sürükleyin. Anket açıkken kısayola tıklayın.</p>
+            <p>Butonu tutup <b>sık kullanılanlar</b> çubuğuna sürükleyin. Anket ekranı açıkken kısayola tıklayın.</p>
 
-            <a class="bookmark-btn" href="javascript:(function(){const%20ld=document.getElementById('indicatorLoader');if(ld){ld.style.setProperty('display','none','important')};document.querySelectorAll('tr.forRequired').forEach(t=>{const%20e=t.querySelectorAll('td.text-center');if(e.length>=2){const%20r=Math.random()<.5?e.length-1:e.length-2,n=e[r].querySelector('.iCheck-helper');n&&n.click()}});const%20t=Array.from(document.querySelectorAll('div.question.forRequired')).find(t=>/6698|Onay/.test(t.textContent));t&&t.querySelector('.iCheck-helper')?.click();const%20p=document.createElement('div');p.innerHTML='<div%20style=%22display:flex;align-items:center;gap:12px%22><div%20style=%22font-size:24px;font-weight:bold%22>✓</div><div><div%20style=%22font-weight:bold;font-size:16px%22>Başarılı!</div><div%20style=%22font-size:13px;opacity:0.9%22>Anket%20dolduruldu%20ve%20yükleme%20ekranı%20kapatıldı.%20Bekleniyor...</div></div></div>';Object.assign(p.style,{position:'fixed',top:'20px',right:'20px',backgroundColor:'#28a745',color:'white',padding:'16px%2020px',borderRadius:'12px',boxShadow:'0%208px%2016px%20rgba(0,0,0,0.2)',zIndex:'1000000001',fontFamily:'sans-serif',maxWidth:'320px',transition:'opacity%200.5s%20ease'});document.body.appendChild(p);setTimeout(()=>p.style.opacity='0',4500);setTimeout(()=>p.remove(),5000);setTimeout(()=>{const%20t=document.querySelector('a[onclick*=\'finish\']');t?t.click():window.finishSurvey?.()},100)})();">
+            <a class="bookmark-btn" href="javascript:(function(){const%20ld=document.getElementById('indicatorLoader');if(ld){ld.style.setProperty('display','none','important')};document.querySelectorAll('tr.forRequired').forEach(t=>{const%20e=t.querySelectorAll('td.text-center');if(e.length>=2){const%20r=Math.random()<.5?e.length-1:e.length-2,n=e[r].querySelector('.iCheck-helper');n&&n.click()}});const%20t=Array.from(document.querySelectorAll('div.question.forRequired')).find(t=>/6698|Onay/.test(t.textContent));t&&t.querySelector('.iCheck-helper')?.click();const%20p=document.createElement('div');p.innerHTML='<div%20style=%22display:flex;align-items:center;gap:12px%22><div%20style=%22font-size:24px;font-weight:bold%22>✓</div><div><div%20style=%22font-weight:bold;font-size:16px%22>Başarılı!</div><div%20style=%22font-size:13px;opacity:0.9%22>Anket%20dolduruldu%20ve%20gönderildi.%20Önceki%20sayfaya%20yönlendirilmeyi%20bekleyin.</div></div></div>';Object.assign(p.style,{position:'fixed',top:'20px',right:'20px',backgroundColor:'#28a745',color:'white',padding:'16px%2020px',borderRadius:'12px',boxShadow:'0%208px%2016px%20rgba(0,0,0,0.2)',zIndex:'1000000001',fontFamily:'sans-serif',maxWidth:'320px',transition:'opacity%200.5s%20ease'});document.body.appendChild(p);setTimeout(()=>p.style.opacity='0',4500);setTimeout(()=>p.remove(),5000);setTimeout(()=>{const%20t=document.querySelector('a[onclick*=\'finish\']');t?t.click():window.finishSurvey?.()},100)})();">
                 🗿 Anketi Doldur
             </a>
 
-            <div class="hint">İpucu: Sayfa donarsa loader otomatik olarak gizlenecektir.</div>
+            <div class="hint">
+                Yer imleri çubuğunu açmak için <b>Ctrl+Shift+B</b> tuşlarını kullanın.
+            </div>
         </div>
     </div>
 
