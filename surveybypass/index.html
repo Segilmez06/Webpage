@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hızlı Anket Doldurma</title>
+    
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+    <style>
+        :root {
+            --bg-color: #f0f4f8;
+            --heading-color: #102a43;
+            --text-color: #334e68;
+            --subtitle-color: #627d98;
+            --btn-bg: #2680eb;
+            --btn-hover: #1c7ed6;
+            --btn-border: #1864ab;
+            --hint-color: #9fb3c8;
+            --bubble-color: hsla(183, 94%, 76%, 0.3);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #1a1e23;
+                --heading-color: #f0f4f8;
+                --text-color: #d9e2ec;
+                --subtitle-color: #9fb3c8;
+                --btn-bg: #3290ff;
+                --btn-hover: #4dabf7;
+                --btn-border: #2680eb;
+                --hint-color: #627d98;
+                --bubble-color: hsla(183, 94%, 76%, 0.2);
+            }
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .bubbles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            background-color: var(--bg-color);
+            transition: background-color 0.3s ease;
+        }
+
+        .bubble {
+            position: absolute;
+            left: var(--bubble-left-offset);
+            bottom: -20%;
+            display: block;
+            width: var(--bubble-radius);
+            height: var(--bubble-radius);
+            border-radius: 50%;
+            animation: float-up var(--bubble-float-duration) var(--bubble-float-delay) ease-in infinite;
+        }
+
+        .bubble::before {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bubble-color);
+            border-radius: inherit;
+            animation: var(--bubble-sway-type) var(--bubble-sway-duration) var(--bubble-sway-delay) ease-in-out alternate infinite;
+        }
+
+        @keyframes float-up { to { transform: translateY(-175vh); } }
+        @keyframes sway-left-to-right { from { transform: translateX(-100%); } to { transform: translateX(100%); } }
+        @keyframes sway-right-to-left { from { transform: translateX(100%); } to { transform: translateX(-100%); } }
+
+        .container {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            pointer-events: none;
+        }
+
+        .content-box {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(8px);
+            padding: 40px;
+            border-radius: 20px;
+            pointer-events: auto;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        h1 { font-size: 2.5rem; margin-bottom: 10px; color: var(--heading-color); }
+        p { font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px; color: var(--subtitle-color); }
+
+        .bookmark-btn {
+            display: inline-block;
+            background-color: var(--btn-bg);
+            color: white;
+            padding: 18px 36px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 12px;
+            border: 2px solid var(--btn-border);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.2s ease;
+            cursor: grab;
+            user-select: none;
+        }
+
+        .bookmark-btn:hover {
+            background-color: var(--btn-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .hint { margin-top: 25px; font-size: 0.85rem; color: var(--hint-color); }
+    </style>
+</head>
+<body>
+
+    <div class="bubbles" id="bubble-container"></div>
+
+    <div class="container">
+        <div class="content-box">
+            <h1>Hızlı Anket Doldurma</h1>
+            <p>Butonu <b>sık kullanılanlar</b> çubuğuna sürükleyin. Anket açıkken kısayola tıklayın.</p>
+
+            <a class="bookmark-btn" href="javascript:(function(){const%20ld=document.getElementById('indicatorLoader');if(ld){ld.style.setProperty('display','none','important')};document.querySelectorAll('tr.forRequired').forEach(t=>{const%20e=t.querySelectorAll('td.text-center');if(e.length>=2){const%20r=Math.random()<.5?e.length-1:e.length-2,n=e[r].querySelector('.iCheck-helper');n&&n.click()}});const%20t=Array.from(document.querySelectorAll('div.question.forRequired')).find(t=>/6698|Onay/.test(t.textContent));t&&t.querySelector('.iCheck-helper')?.click();const%20p=document.createElement('div');p.innerHTML='<div%20style=%22display:flex;align-items:center;gap:12px%22><div%20style=%22font-size:24px;font-weight:bold%22>✓</div><div><div%20style=%22font-weight:bold;font-size:16px%22>Başarılı!</div><div%20style=%22font-size:13px;opacity:0.9%22>Anket%20dolduruldu%20ve%20yükleme%20ekranı%20kapatıldı.%20Bekleniyor...</div></div></div>';Object.assign(p.style,{position:'fixed',top:'20px',right:'20px',backgroundColor:'#28a745',color:'white',padding:'16px%2020px',borderRadius:'12px',boxShadow:'0%208px%2016px%20rgba(0,0,0,0.2)',zIndex:'1000000001',fontFamily:'sans-serif',maxWidth:'320px',transition:'opacity%200.5s%20ease'});document.body.appendChild(p);setTimeout(()=>p.style.opacity='0',4500);setTimeout(()=>p.remove(),5000);setTimeout(()=>{const%20t=document.querySelector('a[onclick*=\'finish\']');t?t.click():window.finishSurvey?.()},100)})();">
+                🗿 Anketi Doldur
+            </a>
+
+            <div class="hint">İpucu: Sayfa donarsa loader otomatik olarak gizlenecektir.</div>
+        </div>
+    </div>
+
+    <script>
+        const bubbleContainer = document.getElementById('bubble-container');
+        const bubbleCount = 50;
+        const swayTypes = ['sway-left-to-right', 'sway-right-to-left'];
+        for (let i = 0; i < bubbleCount; i++) {
+            const bubble = document.createElement('div');
+            bubble.className = 'bubble';
+            bubble.style.setProperty('--bubble-left-offset', `${Math.random() * 100}vw`);
+            bubble.style.setProperty('--bubble-radius', `${1 + Math.random() * 9}vw`);
+            bubble.style.setProperty('--bubble-float-duration', `${6 + Math.random() * 6}s`);
+            bubble.style.setProperty('--bubble-sway-duration', `${4 + Math.random() * 2}s`);
+            bubble.style.setProperty('--bubble-float-delay', `${Math.random() * 4}s`);
+            bubble.style.setProperty('--bubble-sway-delay', `${Math.random() * 4}s`);
+            bubble.style.setProperty('--bubble-sway-type', swayTypes[Math.floor(Math.random() * swayTypes.length)]);
+            bubbleContainer.appendChild(bubble);
+        }
+    </script>
+</body>
+</html>
